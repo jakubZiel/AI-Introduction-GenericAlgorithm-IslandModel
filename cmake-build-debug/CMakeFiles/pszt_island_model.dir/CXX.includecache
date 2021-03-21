@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.cpp
+utility
+-
+New_Population_Factory.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.h
+../structures.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.h
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.h
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/main.cpp
+iostream
+-
+./generation/New_Population_Factory.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.h
+structures.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.h
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.h
+vector
+-
+
