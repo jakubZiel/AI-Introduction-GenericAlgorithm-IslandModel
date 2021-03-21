@@ -18,7 +18,9 @@ Pair crossover(const Genome& par1, const Genome& par2){
     return  pair;
 }
 
-Genome& selection(Population& population){
+int selection(Population& population){
 
-    return population.population[0];
+
+    return 0;
+
 }

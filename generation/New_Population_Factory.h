@@ -8,7 +8,7 @@
 class Genome;
 class Population;
 
-Genome& selection(Population& actualPopulation);
+int selection(Population& actualPopulation);
 std::pair<Genome,Genome> crossover(Genome par1, Genome par2);
 Genome mutation(const Genome& genome);
 
