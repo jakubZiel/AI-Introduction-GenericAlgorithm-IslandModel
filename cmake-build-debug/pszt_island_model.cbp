@@ -82,16 +82,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/NewPopulationFactory.cpp">
+		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.cpp">
 			<Option target="pszt_island_model"/>
 		</Unit>
-		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/NewPopulationFactory.h">
+		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.h">
 			<Option target="pszt_island_model"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/main.cpp">
 			<Option target="pszt_island_model"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/proto.cpp">
+			<Option target="pszt_island_model"/>
+		</Unit>
+		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.h">
 			<Option target="pszt_island_model"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/CMakeLists.txt">
