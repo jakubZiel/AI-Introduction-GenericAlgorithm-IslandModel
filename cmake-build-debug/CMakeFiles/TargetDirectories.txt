@@ -1,0 +1,3 @@
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles/pszt_island_model.dir

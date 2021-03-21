@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/pszt_island_model.dir/main.cpp.o  -o pszt_island_model 
