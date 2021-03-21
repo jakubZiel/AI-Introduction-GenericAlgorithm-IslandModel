@@ -143,6 +143,33 @@ pszt_island_model/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/build
 .PHONY : pszt_island_model/fast
 
+NewPopulationFactory.o: NewPopulationFactory.cpp.o
+
+.PHONY : NewPopulationFactory.o
+
+# target to build an object file
+NewPopulationFactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/NewPopulationFactory.cpp.o
+.PHONY : NewPopulationFactory.cpp.o
+
+NewPopulationFactory.i: NewPopulationFactory.cpp.i
+
+.PHONY : NewPopulationFactory.i
+
+# target to preprocess a source file
+NewPopulationFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/NewPopulationFactory.cpp.i
+.PHONY : NewPopulationFactory.cpp.i
+
+NewPopulationFactory.s: NewPopulationFactory.cpp.s
+
+.PHONY : NewPopulationFactory.s
+
+# target to generate assembly for a file
+NewPopulationFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/NewPopulationFactory.cpp.s
+.PHONY : NewPopulationFactory.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -206,6 +233,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... pszt_island_model"
+	@echo "... NewPopulationFactory.o"
+	@echo "... NewPopulationFactory.i"
+	@echo "... NewPopulationFactory.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
