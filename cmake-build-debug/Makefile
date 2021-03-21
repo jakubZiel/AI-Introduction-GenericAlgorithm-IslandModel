@@ -170,6 +170,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+proto.o: proto.cpp.o
+
+.PHONY : proto.o
+
+# target to build an object file
+proto.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/proto.cpp.o
+.PHONY : proto.cpp.o
+
+proto.i: proto.cpp.i
+
+.PHONY : proto.i
+
+# target to preprocess a source file
+proto.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/proto.cpp.i
+.PHONY : proto.cpp.i
+
+proto.s: proto.cpp.s
+
+.PHONY : proto.s
+
+# target to generate assembly for a file
+proto.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/proto.cpp.s
+.PHONY : proto.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -182,6 +209,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... proto.o"
+	@echo "... proto.i"
+	@echo "... proto.s"
 .PHONY : help
 
 
