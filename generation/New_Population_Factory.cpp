@@ -5,6 +5,7 @@
 #include "New_Population_Factory.h"
 #include "../structures.h"
 
+
 typedef std::pair<Genome,Genome> Pair;
 
 Genome mutation(const Genome& par1){
