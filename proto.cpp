@@ -31,7 +31,7 @@ class ModelWyspowy{
 public:
 
     vector<Populacja> Wyspy;
-}
+};
 
 //ile osobników z każdej wyspy, trzeba będzie zadbać o to żeby każda wyspa dostała tyle samo migrantów
 void migracja(vector<Populacja> wyspy, int rozmiarMigracji){
@@ -48,4 +48,5 @@ double ewolucja(Populacja aktualnaPopulacja){
     //caly proces ewolucji - dopoki nie znajdziemy optymalnego (czyli jakiego?) lub nie przekroczymy liczby pokolen
 
     // na koniec nowa generacja - potomstwo + 2 najlepsze z poprzedniej populacji
+    return 0;
 };
