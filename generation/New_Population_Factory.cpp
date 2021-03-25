@@ -5,23 +5,21 @@
 #include "New_Population_Factory.h"
 #include "../structures.h"
 
+Genome mutation(const std::vector<Genome>& par1){
+    
+}
+Genome crossover(const Genome& par1, const Genome& par2){
 
-typedef std::pair<Genome,Genome> Pair;
-
-Genome mutation(const Genome& par1){
-    Genome genome;
-    return genome;
 }
 
-Pair crossover(const Genome& par1, const Genome& par2){
-    Pair pair;
+std::vector<Genome> reproduction(Population& population){
 
-    return  pair;
 }
 
-int selection(Population& population){
+std::vector<Genome> succession(){
 
+}
 
-    return 0;
+void genetic_mod(std::vector<Genome> &reproduced){
 
 }
