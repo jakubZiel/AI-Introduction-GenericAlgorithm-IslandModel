@@ -126,14 +126,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.cpp">
-			<Option target="test"/>
-			<Option target="pszt_island_model"/>
-		</Unit>
-		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.h">
-			<Option target="test"/>
-			<Option target="pszt_island_model"/>
-		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/main.cpp">
 			<Option target="pszt_island_model"/>
 		</Unit>
@@ -141,10 +133,18 @@
 			<Option target="test"/>
 			<Option target="pszt_island_model"/>
 		</Unit>
-		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.cpp">
+		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp">
+			<Option target="test"/>
 			<Option target="pszt_island_model"/>
 		</Unit>
-		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.h">
+		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h">
+			<Option target="test"/>
+			<Option target="pszt_island_model"/>
+		</Unit>
+		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.cpp">
+			<Option target="pszt_island_model"/>
+		</Unit>
+		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h">
 			<Option target="test"/>
 			<Option target="pszt_island_model"/>
 		</Unit>

@@ -1,6 +1,6 @@
 #include <iostream>
-#include "structures.h"
-#include "generation/New_Population_Factory.h"
+#include "structures/structures.h"
+#include "std-algorithm/evolutionary_operations.h"
 
 
 

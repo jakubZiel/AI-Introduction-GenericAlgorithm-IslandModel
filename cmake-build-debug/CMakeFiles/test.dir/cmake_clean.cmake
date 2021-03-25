@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test.dir/generation/New_Population_Factory.cpp.o"
   "CMakeFiles/test.dir/proto.cpp.o"
+  "CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o"
   "CMakeFiles/test.dir/test/main.cpp.o"
   "test"
   "test.pdb"

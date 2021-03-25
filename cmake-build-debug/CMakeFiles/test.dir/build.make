@@ -103,31 +103,31 @@ CMakeFiles/test.dir/proto.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/proto.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/proto.cpp -o CMakeFiles/test.dir/proto.cpp.s
 
-CMakeFiles/test.dir/generation/New_Population_Factory.cpp.o: CMakeFiles/test.dir/flags.make
-CMakeFiles/test.dir/generation/New_Population_Factory.cpp.o: ../generation/New_Population_Factory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/generation/New_Population_Factory.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/generation/New_Population_Factory.cpp.o -c /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.cpp
+CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o: ../std-algorithm/evolutionary_operations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o -c /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp
 
-CMakeFiles/test.dir/generation/New_Population_Factory.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/generation/New_Population_Factory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.cpp > CMakeFiles/test.dir/generation/New_Population_Factory.cpp.i
+CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp > CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.i
 
-CMakeFiles/test.dir/generation/New_Population_Factory.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/generation/New_Population_Factory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.cpp -o CMakeFiles/test.dir/generation/New_Population_Factory.cpp.s
+CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp -o CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.s
 
 # Object files for target test
 test_OBJECTS = \
 "CMakeFiles/test.dir/test/main.cpp.o" \
 "CMakeFiles/test.dir/proto.cpp.o" \
-"CMakeFiles/test.dir/generation/New_Population_Factory.cpp.o"
+"CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS =
 
 test: CMakeFiles/test.dir/test/main.cpp.o
 test: CMakeFiles/test.dir/proto.cpp.o
-test: CMakeFiles/test.dir/generation/New_Population_Factory.cpp.o
+test: CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable test"

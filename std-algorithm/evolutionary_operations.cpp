@@ -2,8 +2,8 @@
 // Created by jakub on 21.03.2021.
 //
 #include <random>
-#include "New_Population_Factory.h"
-#include "../structures.h"
+#include "evolutionary_operations.h"
+#include "../structures/structures.h"
 #include <chrono>
 #include <cmath>
 #include <ostream>
