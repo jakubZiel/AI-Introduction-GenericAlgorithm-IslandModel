@@ -19,8 +19,6 @@ cmath
 -
 ostream
 -
-algorithm
--
 
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.h
 vector
@@ -28,21 +26,15 @@ vector
 utility
 -
 
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/main.cpp
-iostream
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/proto.cpp
+vector
 -
-structures.h
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.h
-generation/New_Population_Factory.h
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.h
-
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.cpp
-structures.h
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.h
+utility
+-
 
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.h
 vector
 -
-ostream
--
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/test/main.cpp
 

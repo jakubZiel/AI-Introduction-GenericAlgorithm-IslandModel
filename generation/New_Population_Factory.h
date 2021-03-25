@@ -6,19 +6,20 @@
 #define PSZT_ISLAND_MODEL_NEW_POPULATION_FACTORY_H
 
 #include <vector>
-
+#include <utility>
 class Genome;
 class Population;
 
-std::vector<Genome> reproduction(Population& actualPopulation);
+std::vector<Genome> reproduction(Population& population, int number_of_chosen);
 
-Genome mutation(const Genome& genome);
+void mutation(Genome& genome, double mut_strength);
 
-Genome crossover(Genome par1, Genome par2);
+Genome crossover(const Genome& par1, const Genome& par2);
 
-void genetic_mod(std::vector<Genome>& reproduced);
+void genetic_mod(std::vector<Genome> &reproduced, double mut_strength, double cross_possibility);
 
-std::vector<Genome> succession(const std::vector<Genome>& current_gen, const std::vector<Genome> &new_gen);
+std::vector<Genome> succession(const std::vector<Genome>& current_gen, const std::vector<Genome> &new_gen, int elitism_count);
 
+std::vector<std::pair<double, double>> array_of_probabilities(const std::vector<Genome> &genomes);
 
 #endif //PSZT_ISLAND_MODEL_NEW_POPULATION_FACTORY_H

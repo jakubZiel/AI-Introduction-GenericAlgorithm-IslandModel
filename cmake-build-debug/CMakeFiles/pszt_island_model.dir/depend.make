@@ -11,3 +11,6 @@ CMakeFiles/pszt_island_model.dir/main.cpp.o: ../structures.h
 
 CMakeFiles/pszt_island_model.dir/proto.cpp.o: ../proto.cpp
 
+CMakeFiles/pszt_island_model.dir/structures.cpp.o: ../structures.cpp
+CMakeFiles/pszt_island_model.dir/structures.cpp.o: ../structures.h
+

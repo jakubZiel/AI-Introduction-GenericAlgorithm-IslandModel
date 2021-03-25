@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test
+
+# Build rule for target.
+test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test
+.PHONY : test
+
+# fast build rule for target.
+test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
+.PHONY : test/fast
+
+#=============================================================================
 # Target rules for targets named pszt_island_model
 
 # Build rule for target.
@@ -149,6 +162,7 @@ generation/New_Population_Factory.o: generation/New_Population_Factory.cpp.o
 
 # target to build an object file
 generation/New_Population_Factory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/generation/New_Population_Factory.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/generation/New_Population_Factory.cpp.o
 .PHONY : generation/New_Population_Factory.cpp.o
 
@@ -158,6 +172,7 @@ generation/New_Population_Factory.i: generation/New_Population_Factory.cpp.i
 
 # target to preprocess a source file
 generation/New_Population_Factory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/generation/New_Population_Factory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/generation/New_Population_Factory.cpp.i
 .PHONY : generation/New_Population_Factory.cpp.i
 
@@ -167,6 +182,7 @@ generation/New_Population_Factory.s: generation/New_Population_Factory.cpp.s
 
 # target to generate assembly for a file
 generation/New_Population_Factory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/generation/New_Population_Factory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/generation/New_Population_Factory.cpp.s
 .PHONY : generation/New_Population_Factory.cpp.s
 
@@ -203,6 +219,7 @@ proto.o: proto.cpp.o
 
 # target to build an object file
 proto.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/proto.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/proto.cpp.o
 .PHONY : proto.cpp.o
 
@@ -212,6 +229,7 @@ proto.i: proto.cpp.i
 
 # target to preprocess a source file
 proto.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/proto.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/proto.cpp.i
 .PHONY : proto.cpp.i
 
@@ -221,8 +239,63 @@ proto.s: proto.cpp.s
 
 # target to generate assembly for a file
 proto.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/proto.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/proto.cpp.s
 .PHONY : proto.cpp.s
+
+structures.o: structures.cpp.o
+
+.PHONY : structures.o
+
+# target to build an object file
+structures.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/structures.cpp.o
+.PHONY : structures.cpp.o
+
+structures.i: structures.cpp.i
+
+.PHONY : structures.i
+
+# target to preprocess a source file
+structures.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/structures.cpp.i
+.PHONY : structures.cpp.i
+
+structures.s: structures.cpp.s
+
+.PHONY : structures.s
+
+# target to generate assembly for a file
+structures.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/structures.cpp.s
+.PHONY : structures.cpp.s
+
+test/main.o: test/main.cpp.o
+
+.PHONY : test/main.o
+
+# target to build an object file
+test/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/main.cpp.o
+.PHONY : test/main.cpp.o
+
+test/main.i: test/main.cpp.i
+
+.PHONY : test/main.i
+
+# target to preprocess a source file
+test/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/main.cpp.i
+.PHONY : test/main.cpp.i
+
+test/main.s: test/main.cpp.s
+
+.PHONY : test/main.s
+
+# target to generate assembly for a file
+test/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test/main.cpp.s
+.PHONY : test/main.cpp.s
 
 # Help Target
 help:
@@ -233,6 +306,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... pszt_island_model"
+	@echo "... test"
 	@echo "... generation/New_Population_Factory.o"
 	@echo "... generation/New_Population_Factory.i"
 	@echo "... generation/New_Population_Factory.s"
@@ -242,6 +316,12 @@ help:
 	@echo "... proto.o"
 	@echo "... proto.i"
 	@echo "... proto.s"
+	@echo "... structures.o"
+	@echo "... structures.i"
+	@echo "... structures.s"
+	@echo "... test/main.o"
+	@echo "... test/main.i"
+	@echo "... test/main.s"
 .PHONY : help
 
 
