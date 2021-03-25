@@ -16,7 +16,7 @@ std::vector<Genome> reproduction(Population& population){
 
 }
 
-std::vector<Genome> succession(){
+std::vector<Genome> succession(const std::vector<Genome>& current_gen, const std::vector<Genome> &new_gen){
 
 }
 

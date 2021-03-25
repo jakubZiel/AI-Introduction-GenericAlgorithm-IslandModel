@@ -18,7 +18,7 @@ Genome crossover(Genome par1, Genome par2);
 
 void genetic_mod(std::vector<Genome>& reproduced);
 
-std::vector<Genome> succession();
+std::vector<Genome> succession(const std::vector<Genome>& current_gen, const std::vector<Genome> &new_gen);
 
 
 #endif //PSZT_ISLAND_MODEL_NEW_POPULATION_FACTORY_H
