@@ -249,6 +249,7 @@ structures/structures.o: structures/structures.cpp.o
 
 # target to build an object file
 structures/structures.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/structures/structures.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/structures/structures.cpp.o
 .PHONY : structures/structures.cpp.o
 
@@ -258,6 +259,7 @@ structures/structures.i: structures/structures.cpp.i
 
 # target to preprocess a source file
 structures/structures.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/structures/structures.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/structures/structures.cpp.i
 .PHONY : structures/structures.cpp.i
 
@@ -267,6 +269,7 @@ structures/structures.s: structures/structures.cpp.s
 
 # target to generate assembly for a file
 structures/structures.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/structures/structures.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/structures/structures.cpp.s
 .PHONY : structures/structures.cpp.s
 

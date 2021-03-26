@@ -23,6 +23,20 @@ double Genome::generateRandDouble(double min, double max) {
     return min + d*(max - min);
 }
 
+bool Genome::operator<(const Genome &other_genome) const {
+    return fitness < other_genome.fitness;
+}
+
+std::ostream &operator<<(std::ostream &out, const Genome& genome){
+
+    out << "Genome: ";
+    for (double i : genome.genome){
+        out << i << ", ";
+    }
+
+    out << "fitness: "<< genome.fitness;
+    return out;
+}
 
 Population::Population(int popSize, int genLength) {
     for (int i=0; i<popSize; i++){

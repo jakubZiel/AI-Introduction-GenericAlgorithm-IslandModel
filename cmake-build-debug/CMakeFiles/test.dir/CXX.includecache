@@ -6,35 +6,35 @@
 
 #IncludeRegexTransform: 
 
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.cpp
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp
 random
 -
-New_Population_Factory.h
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.h
-../structures.h
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.h
+evolutionary_operations.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
+../structures/structures.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
 chrono
 -
 cmath
 -
+algorithm
+-
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
+vector
+-
+utility
+-
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
+vector
+-
 ostream
 -
 
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/generation/New_Population_Factory.h
-vector
--
-utility
--
-
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/proto.cpp
-vector
--
-utility
--
-
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures.h
-vector
--
-
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/test/main.cpp
+../structures/structures.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
+../std-algorithm/evolutionary_operations.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
 

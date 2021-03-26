@@ -142,6 +142,7 @@
 			<Option target="pszt_island_model"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.cpp">
+			<Option target="test"/>
 			<Option target="pszt_island_model"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h">
