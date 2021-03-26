@@ -103,22 +103,9 @@ CMakeFiles/pszt_island_model.dir/proto.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pszt_island_model.dir/proto.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/proto.cpp -o CMakeFiles/pszt_island_model.dir/proto.cpp.s
 
-CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o: CMakeFiles/pszt_island_model.dir/flags.make
-CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o: ../std-algorithm/evolutionary_operations.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o -c /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp
-
-CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp > CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.i
-
-CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp -o CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.s
-
 CMakeFiles/pszt_island_model.dir/structures/structures.cpp.o: CMakeFiles/pszt_island_model.dir/flags.make
 CMakeFiles/pszt_island_model.dir/structures/structures.cpp.o: ../structures/structures.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pszt_island_model.dir/structures/structures.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pszt_island_model.dir/structures/structures.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pszt_island_model.dir/structures/structures.cpp.o -c /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.cpp
 
 CMakeFiles/pszt_island_model.dir/structures/structures.cpp.i: cmake_force
@@ -129,20 +116,33 @@ CMakeFiles/pszt_island_model.dir/structures/structures.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pszt_island_model.dir/structures/structures.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.cpp -o CMakeFiles/pszt_island_model.dir/structures/structures.cpp.s
 
+CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o: CMakeFiles/pszt_island_model.dir/flags.make
+CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o: ../std-algorithm/evolutionary_operations.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o -c /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp
+
+CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp > CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.i
+
+CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp -o CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.s
+
 # Object files for target pszt_island_model
 pszt_island_model_OBJECTS = \
 "CMakeFiles/pszt_island_model.dir/main.cpp.o" \
 "CMakeFiles/pszt_island_model.dir/proto.cpp.o" \
-"CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o" \
-"CMakeFiles/pszt_island_model.dir/structures/structures.cpp.o"
+"CMakeFiles/pszt_island_model.dir/structures/structures.cpp.o" \
+"CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o"
 
 # External object files for target pszt_island_model
 pszt_island_model_EXTERNAL_OBJECTS =
 
 pszt_island_model: CMakeFiles/pszt_island_model.dir/main.cpp.o
 pszt_island_model: CMakeFiles/pszt_island_model.dir/proto.cpp.o
-pszt_island_model: CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o
 pszt_island_model: CMakeFiles/pszt_island_model.dir/structures/structures.cpp.o
+pszt_island_model: CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o
 pszt_island_model: CMakeFiles/pszt_island_model.dir/build.make
 pszt_island_model: CMakeFiles/pszt_island_model.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable pszt_island_model"
