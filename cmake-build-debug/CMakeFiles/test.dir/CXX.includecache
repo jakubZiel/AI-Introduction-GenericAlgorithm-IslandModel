@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp
+random
+-
+evolutionary_operations.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
+../structures/structures.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
+chrono
+-
+cmath
+-
+algorithm
+-
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
+vector
+-
+utility
+-
+
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
 vector
 -
@@ -15,8 +35,6 @@ ostream
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/test/main.cpp
 ../structures/structures.h
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
-algorithm
--
-iostream
--
+../std-algorithm/evolutionary_operations.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
 

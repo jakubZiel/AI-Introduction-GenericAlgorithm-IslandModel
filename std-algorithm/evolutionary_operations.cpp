@@ -57,18 +57,24 @@ double reproduction_possibility(int rank, int population_size){
 
 //building array of probabilities for sorted population
 
-std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes){
+std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
     std::vector<range> probabilities;
     double current = 0.0;
     range curr_range;
 
-    for (int i = 0; i < genomes.size(); i++){
+    for (int i = 0; i < genomes.size(); i++) {
         curr_range.first = current;
         curr_range.second = current = current + reproduction_possibility(i, genomes.size());
 
         probabilities.push_back(curr_range);
     }
 
+    //normalize to range 0 - 1
+
+    for (range &r : probabilities) {
+        r.first /= probabilities[probabilities.size() - 1].second;
+        r.second/= probabilities[probabilities.size() - 1].second;
+    }
     return probabilities;
 }
 
