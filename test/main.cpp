@@ -5,11 +5,9 @@
 #include "../std-algorithm/evolutionary_operations.h"
 int main() {
 
-    Population pop(10,5);
+    Population pop(3,5);
 
     std::vector<std::pair<double, double>> res = array_of_probabilities(pop.population);
-
-
 
     return 0;
 }

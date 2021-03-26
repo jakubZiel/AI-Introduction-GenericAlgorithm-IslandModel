@@ -64,7 +64,7 @@ std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
 
     for (int i = 0; i < genomes.size(); i++) {
         curr_range.first = current;
-        curr_range.second = current = current + reproduction_possibility(i, genomes.size());
+        curr_range.second = current = current + reproduction_possibility(i + 1, genomes.size());
 
         probabilities.push_back(curr_range);
     }

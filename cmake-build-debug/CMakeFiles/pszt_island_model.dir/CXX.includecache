@@ -14,31 +14,11 @@ structures/structures.h
 std-algorithm/evolutionary_operations.h
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
 
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_opearations.cpp
-random
--
-evolutionary_operations.h
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
-../structures/structures.h
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
-chrono
--
-cmath
--
-ostream
--
-algorithm
--
-
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
 vector
 -
 utility
 -
-
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.cpp
-structures.h
-/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
 
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
 vector
