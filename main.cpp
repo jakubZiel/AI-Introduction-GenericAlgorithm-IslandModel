@@ -6,9 +6,7 @@
 
 int main() {
 
-
     std::vector<Genome> gen;
-
 
     std::vector<std::pair<double, double>> res = array_of_probabilities(gen);
 
