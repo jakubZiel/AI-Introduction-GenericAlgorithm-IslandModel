@@ -1,8 +1,8 @@
 //
 // Created by jakub on 25.03.2021.
 //
-#include "../structures/structures.h"
-#include "../std-algorithm/evolutionary_operations.h"
+#include "structures/structures.h"
+#include "std-algorithm/evolutionary_operations.h"
 int main() {
 
     Population pop(3,5);
