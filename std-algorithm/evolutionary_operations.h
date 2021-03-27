@@ -7,10 +7,11 @@
 
 #include <vector>
 #include <utility>
+
 class Genome;
 class Population;
 
-std::vector<Genome> reproduction(Population& population, int number_of_chosen);
+std::vector<Genome> choosing_for_reproduction(Population& population, int number_of_chosen);
 
 void mutation(Genome& genome, double mut_strength);
 
