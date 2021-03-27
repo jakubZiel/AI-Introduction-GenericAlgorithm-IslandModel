@@ -154,7 +154,7 @@ void genetic_mod(std::vector<Genome> &reproduced, double mut_strength, double cr
 
 //current is sorted, new is sorted
 //succession set is elitism count best subjects from new_gen and then rest is best genomes from new_gen and current_gen
-std::vector<Genome> succession(const std::vector<Genome>& current_gen, const std::vector<Genome> &new_gen, int elitism_count) {
+std::vector<Genome> succession(const std::vector<Genome>& current_gen, std::vector<Genome> &new_gen, int elitism_count) {
     std::vector<Genome> succession_result;
 
     succession_result.reserve(elitism_count);

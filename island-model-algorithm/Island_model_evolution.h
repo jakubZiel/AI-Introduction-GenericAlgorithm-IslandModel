@@ -1,0 +1,14 @@
+//
+// Created by jakub on 27.03.2021.
+//
+
+#ifndef PSZT_ISLAND_MODEL_ISLAND_MODEL_EVOLUTION_H
+#define PSZT_ISLAND_MODEL_ISLAND_MODEL_EVOLUTION_H
+
+
+class Island_model_evolution {
+
+};
+
+
+#endif //PSZT_ISLAND_MODEL_ISLAND_MODEL_EVOLUTION_H
