@@ -17,10 +17,12 @@ public:
 
     Genome();
 
+    bool operator<(const Genome& other_genome) const;
+    bool operator>(const Genome &other_genome) const;
+
     static double generateRandDouble(double min, double max);
     friend std::ostream &operator<<(std::ostream &out, const Genome& genome);
-    bool operator<(const Genome& other_genome) const;
-};
+    };
 
 class Population{
 public:

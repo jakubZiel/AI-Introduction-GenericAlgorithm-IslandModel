@@ -27,6 +27,10 @@ bool Genome::operator<(const Genome &other_genome) const {
     return fitness < other_genome.fitness;
 }
 
+bool Genome::operator> (const Genome &other_genome) const {
+    return fitness > other_genome.fitness;
+}
+
 std::ostream &operator<<(std::ostream &out, const Genome& genome){
 
     out << "Genome: ";
