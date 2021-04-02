@@ -23,4 +23,6 @@ std::vector<Genome> succession(const std::vector<Genome>& current_gen, const std
 
 std::vector<std::pair<double, double>> array_of_probabilities(const std::vector<Genome> &genomes);
 
+void bent_cigar_fitness(std::vector<Genome> &current_population);
+
 #endif //PSZT_ISLAND_MODEL_EVOLUTIONARY_OPERATIONS_H
