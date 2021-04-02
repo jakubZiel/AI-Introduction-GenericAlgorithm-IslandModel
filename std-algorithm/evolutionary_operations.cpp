@@ -173,3 +173,18 @@ std::vector<Genome> succession(const std::vector<Genome>& current_gen, std::vect
 
     return succession_result;
 }
+
+//evaluates the fitness of all genomes in population, using Bent Cigar Function (CEC 2017)
+// f(x) = x1^2 + 10^6*sum{i >2}(xi^2)
+void bent_cigar_fitness(std::vector<Genome> &current_population){
+    for (int i=0; i<current_population.size(); i++){
+        std::vector<double> current_gen = current_population[i].genome;
+
+        double fitness_value_sum = current_gen[0]*current_gen[0];
+
+        for (int j=1; j<current_gen.size(); j++)
+            fitness_value_sum += 1000000*(current_gen[j]*current_gen[j]);
+
+        current_population[i].fitness = fitness_value_sum;
+    }
+}
