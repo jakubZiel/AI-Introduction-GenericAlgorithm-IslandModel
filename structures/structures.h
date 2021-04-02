@@ -11,7 +11,7 @@ class Genome{
 
 public:
     std::vector<double> genome;
-    int fitness;
+    double fitness;
 
     explicit Genome(int length);
 

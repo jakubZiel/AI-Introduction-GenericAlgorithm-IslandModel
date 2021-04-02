@@ -129,12 +129,40 @@ CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp -o CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.s
 
+CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o: ../std-algorithm/Evolution.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o -c /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.cpp
+
+CMakeFiles/test.dir/std-algorithm/Evolution.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/std-algorithm/Evolution.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.cpp > CMakeFiles/test.dir/std-algorithm/Evolution.cpp.i
+
+CMakeFiles/test.dir/std-algorithm/Evolution.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/std-algorithm/Evolution.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.cpp -o CMakeFiles/test.dir/std-algorithm/Evolution.cpp.s
+
+CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o: ../island-model-algorithm/Island_model_evolution.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o -c /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/island-model-algorithm/Island_model_evolution.cpp
+
+CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/island-model-algorithm/Island_model_evolution.cpp > CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.i
+
+CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/island-model-algorithm/Island_model_evolution.cpp -o CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.s
+
 # Object files for target test
 test_OBJECTS = \
 "CMakeFiles/test.dir/test/main.cpp.o" \
 "CMakeFiles/test.dir/proto.cpp.o" \
 "CMakeFiles/test.dir/structures/structures.cpp.o" \
-"CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o"
+"CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o" \
+"CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o" \
+"CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS =
@@ -143,9 +171,11 @@ test: CMakeFiles/test.dir/test/main.cpp.o
 test: CMakeFiles/test.dir/proto.cpp.o
 test: CMakeFiles/test.dir/structures/structures.cpp.o
 test: CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o
+test: CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o
+test: CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

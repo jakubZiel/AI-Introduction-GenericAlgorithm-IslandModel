@@ -1,13 +1,14 @@
 //
 // Created by jakub on 25.03.2021.
 //
-#include "structures/structures.h"
-#include "std-algorithm/evolutionary_operations.h"
+#include "std-algorithm/Evolution.h"
+
 int main() {
 
-    Population pop(3,5);
+    Evolution evo(10, 0.3,0.5 ,5 ,30);
 
-    std::vector<std::pair<double, double>> res = array_of_probabilities(pop.population);
+    evo.run(1, 2);
+
 
     return 0;
 }

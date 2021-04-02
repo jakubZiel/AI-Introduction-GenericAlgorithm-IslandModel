@@ -131,9 +131,11 @@
 			</Target>
 		</Build>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/island-model-algorithm/Island_model_evolution.cpp">
+			<Option target="test"/>
 			<Option target="pszt_island_model"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/island-model-algorithm/Island_model_evolution.h">
+			<Option target="test"/>
 			<Option target="pszt_island_model"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/main.cpp">
@@ -144,9 +146,11 @@
 			<Option target="pszt_island_model"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.cpp">
+			<Option target="test"/>
 			<Option target="pszt_island_model"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.h">
+			<Option target="test"/>
 			<Option target="pszt_island_model"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp">
