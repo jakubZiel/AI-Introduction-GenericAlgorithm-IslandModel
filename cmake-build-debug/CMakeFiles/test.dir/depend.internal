@@ -19,6 +19,10 @@ CMakeFiles/test.dir/structures/structures.cpp.o
  /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.cpp
  /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
 CMakeFiles/test.dir/test/main.cpp.o
+<<<<<<< HEAD
  ../std-algorithm/Evolution.h
+=======
+ ../std-algorithm/evolutionary_operations.h
+>>>>>>> kuba
  ../structures/structures.h
  /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/test/main.cpp
