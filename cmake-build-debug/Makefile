@@ -156,6 +156,33 @@ pszt_island_model/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/build
 .PHONY : pszt_island_model/fast
 
+island-model-algorithm/Island_model_evolution.o: island-model-algorithm/Island_model_evolution.cpp.o
+
+.PHONY : island-model-algorithm/Island_model_evolution.o
+
+# target to build an object file
+island-model-algorithm/Island_model_evolution.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/island-model-algorithm/Island_model_evolution.cpp.o
+.PHONY : island-model-algorithm/Island_model_evolution.cpp.o
+
+island-model-algorithm/Island_model_evolution.i: island-model-algorithm/Island_model_evolution.cpp.i
+
+.PHONY : island-model-algorithm/Island_model_evolution.i
+
+# target to preprocess a source file
+island-model-algorithm/Island_model_evolution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/island-model-algorithm/Island_model_evolution.cpp.i
+.PHONY : island-model-algorithm/Island_model_evolution.cpp.i
+
+island-model-algorithm/Island_model_evolution.s: island-model-algorithm/Island_model_evolution.cpp.s
+
+.PHONY : island-model-algorithm/Island_model_evolution.s
+
+# target to generate assembly for a file
+island-model-algorithm/Island_model_evolution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/island-model-algorithm/Island_model_evolution.cpp.s
+.PHONY : island-model-algorithm/Island_model_evolution.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -212,6 +239,33 @@ proto.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/proto.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/proto.cpp.s
 .PHONY : proto.cpp.s
+
+std-algorithm/Evolution.o: std-algorithm/Evolution.cpp.o
+
+.PHONY : std-algorithm/Evolution.o
+
+# target to build an object file
+std-algorithm/Evolution.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.o
+.PHONY : std-algorithm/Evolution.cpp.o
+
+std-algorithm/Evolution.i: std-algorithm/Evolution.cpp.i
+
+.PHONY : std-algorithm/Evolution.i
+
+# target to preprocess a source file
+std-algorithm/Evolution.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.i
+.PHONY : std-algorithm/Evolution.cpp.i
+
+std-algorithm/Evolution.s: std-algorithm/Evolution.cpp.s
+
+.PHONY : std-algorithm/Evolution.s
+
+# target to generate assembly for a file
+std-algorithm/Evolution.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.s
+.PHONY : std-algorithm/Evolution.cpp.s
 
 std-algorithm/evolutionary_operations.o: std-algorithm/evolutionary_operations.cpp.o
 
@@ -310,12 +364,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... pszt_island_model"
 	@echo "... test"
+	@echo "... island-model-algorithm/Island_model_evolution.o"
+	@echo "... island-model-algorithm/Island_model_evolution.i"
+	@echo "... island-model-algorithm/Island_model_evolution.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
 	@echo "... proto.o"
 	@echo "... proto.i"
 	@echo "... proto.s"
+	@echo "... std-algorithm/Evolution.o"
+	@echo "... std-algorithm/Evolution.i"
+	@echo "... std-algorithm/Evolution.s"
 	@echo "... std-algorithm/evolutionary_operations.o"
 	@echo "... std-algorithm/evolutionary_operations.i"
 	@echo "... std-algorithm/evolutionary_operations.s"

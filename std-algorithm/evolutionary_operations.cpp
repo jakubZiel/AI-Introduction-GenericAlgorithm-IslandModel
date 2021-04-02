@@ -11,7 +11,7 @@
 typedef std::pair<double, double> range;
 
 //basic mutation, as a driving force behind exploration
-//it happens for every new genome chosen for in process of reproduction
+//it happens for every new genome chosen for in process of choosing_for_reproduction
 void mutation(Genome& gen, double mut_strength){
 
     std::vector<double> &genome = gen.genome;
@@ -45,8 +45,8 @@ Genome crossover(const Genome& par1, const Genome& par2){
 
     return child;
 }
-//reproduction based on rank in population, should be called when population is already sorted.
-//    |        1st best        |      2nd      |    3rd    |  4th  |  5th  | 6th |
+//choosing_for_reproduction based on rank in population, should be called when population is already sorted.
+//  0 ====>  |        1st best        |      2nd      |    3rd    |  4th  |  5th  | 6th |  <====  1
 // Probability of being chosen for tournament which the winner gets to reproduce
 
 double reproduction_possibility(int rank, int population_size){
@@ -64,7 +64,7 @@ std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
 
     for (int i = 0; i < genomes.size(); i++) {
         curr_range.first = current;
-        curr_range.second = current = current + reproduction_possibility(i, genomes.size());
+        curr_range.second = current = current + reproduction_possibility(i + 1, genomes.size());
 
         probabilities.push_back(curr_range);
     }
@@ -73,14 +73,14 @@ std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
 
     for (range &r : probabilities) {
         r.first /= probabilities[probabilities.size() - 1].second;
-        r.second/= probabilities[probabilities.size() - 1].second;
+        r.second /= probabilities[probabilities.size() - 1].second;
     }
     return probabilities;
 }
 
-//choose base reproduction set by playing tournaments, winner of tournament
+//choose base choosing_for_reproduction set by playing tournaments, winner of tournament
 // is begin added to set. There might be the same subjects chosen multiple times.
-std::vector<Genome> reproduction(Population& population, int number_of_chosen){
+std::vector<Genome> choosing_for_reproduction(Population& population, int number_of_chosen){
 
     std::uniform_real_distribution<double> distribution(0., 1.);
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
@@ -96,10 +96,11 @@ std::vector<Genome> reproduction(Population& population, int number_of_chosen){
 
         double random_result = distribution(generator);
 
-        for (int j = 0; j < probabilities.size(); j++){
-            if (random_result >= probabilities[j].first && random_result < probabilities[j].second){
+        for (int genome_rank = 0; genome_rank < probabilities.size(); genome_rank++){
 
-                tournament.emplace_back(j,population.population[j]);
+            if (random_result >= probabilities[genome_rank].first && random_result < probabilities[genome_rank].second){
+
+                tournament.emplace_back(genome_rank, population.population[genome_rank]);
 
                 if (tournament.size() == 2){
 
@@ -116,10 +117,44 @@ std::vector<Genome> reproduction(Population& population, int number_of_chosen){
     return chosen_genomes;
 }
 
+void genetic_mod(std::vector<Genome> &reproduced, double mut_strength, double cross_possibility){
+
+    std::uniform_real_distribution<double> distribution(0., 1.);
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    std::minstd_rand0 generator(seed);
+
+
+    std::uniform_int_distribution<int> distribution_int(0, reproduced.size() - 1);
+    double prob_result;
+
+    //TODO:
+    //std::vector<Genome> offspring;
+
+    int number_of_attempts = reproduced.size();
+
+    for (int i = 0; i < number_of_attempts; i++){
+        prob_result = distribution(generator);
+        if (prob_result <= cross_possibility){
+
+            int parent1 = distribution_int(generator);
+            int parent2 = distribution_int(generator);
+
+            reproduced.push_back(crossover(reproduced[parent1], reproduced[parent2]));
+
+            //TODO:
+            //offspring.push_back(crossover(reproduced[parent1], reproduced[parent2]));
+        }
+    }
+
+    for (Genome &genome: reproduced){
+        mutation(genome, mut_strength);
+    }
+}
+
 
 //current is sorted, new is sorted
 //succession set is elitism count best subjects from new_gen and then rest is best genomes from new_gen and current_gen
-std::vector<Genome> succession(const std::vector<Genome>& current_gen, const std::vector<Genome> &new_gen, int elitism_count) {
+std::vector<Genome> succession(const std::vector<Genome>& current_gen, std::vector<Genome> &new_gen, int elitism_count) {
     std::vector<Genome> succession_result;
 
     succession_result.reserve(elitism_count);
@@ -130,46 +165,26 @@ std::vector<Genome> succession(const std::vector<Genome>& current_gen, const std
 
     int population_size = current_gen.size();
 
-    std::vector<Genome> gen_union;
-    gen_union.reserve(current_gen.size() + new_gen.size());
-
-    gen_union.insert(gen_union.end(), current_gen.begin(), current_gen.end());
-    gen_union.insert(gen_union.end(), new_gen.begin(), new_gen.end());
-
-    std::sort(gen_union.begin(), gen_union.end());
+    std::sort(new_gen.begin(), new_gen.end());
 
     for (int i = 0; i < population_size - elitism_count; i++){
-        succession_result.push_back(gen_union[i]);
+        succession_result.push_back(new_gen[i]);
     }
 
     return succession_result;
 }
 
-void genetic_mod(std::vector<Genome> &reproduced, double mut_strength, double cross_possibility){
+//evaluates the fitness of all genomes in population, using Bent Cigar Function (CEC 2017)
+// f(x) = x1^2 + 10^6*sum{i >2}(xi^2)
+void bent_cigar_fitness(std::vector<Genome> &current_population){
+    for (int i=0; i<current_population.size(); i++){
+        std::vector<double> current_gen = current_population[i].genome;
 
-    std::uniform_real_distribution<double> distribution(0., 1.);
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    std::minstd_rand0 generator(seed);
+        double fitness_value_sum = current_gen[0]*current_gen[0];
 
+        for (int j=1; j<current_gen.size(); j++)
+            fitness_value_sum += 1000000*(current_gen[j]*current_gen[j]);
 
-    std::uniform_int_distribution<int> distribution_int(0, reproduced.size());
-    double prob_result;
-
-    for (int i = 0; i < reproduced.size();i++){
-        prob_result = distribution(generator);
-        if (prob_result > cross_possibility){
-
-            int parent1 = distribution_int(generator);
-            int parent2 = distribution_int(generator);
-
-            int removed = distribution_int(generator);
-
-            reproduced.erase(reproduced.begin() + removed);
-            reproduced.push_back(crossover(reproduced[parent1], reproduced[parent2]));
-        }
-    }
-
-    for (Genome &genome: reproduced){
-        mutation(genome, mut_strength);
+        current_population[i].fitness = fitness_value_sum;
     }
 }
