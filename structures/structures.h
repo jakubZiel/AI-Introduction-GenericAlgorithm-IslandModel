@@ -25,7 +25,7 @@ public:
 class Population{
 public:
     std::vector<Genome> population;
-
+    
     Population(int pop_size, int gen_length);
 };
 
