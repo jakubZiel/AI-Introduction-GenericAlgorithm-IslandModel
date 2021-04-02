@@ -171,7 +171,6 @@ std::vector<Genome> succession(const std::vector<Genome>& current_gen, std::vect
         succession_result.push_back(new_gen[i]);
     }
 
-    int k;
     return succession_result;
 }
 
