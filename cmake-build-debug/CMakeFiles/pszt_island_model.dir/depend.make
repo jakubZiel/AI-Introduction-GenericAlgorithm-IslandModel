@@ -10,6 +10,11 @@ CMakeFiles/pszt_island_model.dir/main.cpp.o: ../structures/structures.h
 
 CMakeFiles/pszt_island_model.dir/proto.cpp.o: ../proto.cpp
 
+<<<<<<< HEAD
+=======
+CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.o: ../island-model-algorithm/Island_model_evolution.h
+CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.o: ../std-algorithm/Evolution.h
+>>>>>>> kuba
 CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.o: ../structures/structures.h
 CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.o: ../std-algorithm/Evolution.cpp
 CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.o: ../std-algorithm/Evolution.h

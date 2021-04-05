@@ -6,12 +6,36 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
+=======
+../island-model-algorithm/Island_model_evolution.h
+
+../std-algorithm/Evolution.h
+evolutionary_operations.h
+../std-algorithm/evolutionary_operations.h
+structures/structures.h
+../std-algorithm/structures/structures.h
+std-algorithm/Evolution.h
+../std-algorithm/std-algorithm/Evolution.h
+island-model-algorithm/Island_model_evolution.h
+../std-algorithm/island-model-algorithm/Island_model_evolution.h
+
+>>>>>>> kuba
 ../structures/structures.h
 vector
 -
 ostream
 -
 
+<<<<<<< HEAD
+=======
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/island-model-algorithm/Island_model_evolution.cpp
+Island_model_evolution.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/island-model-algorithm/Island_model_evolution.h
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/island-model-algorithm/Island_model_evolution.h
+
+>>>>>>> kuba
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/main.cpp
 iostream
 -
@@ -23,6 +47,7 @@ std-algorithm/evolutionary_operations.h
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.cpp
 Evolution.h
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.h
+<<<<<<< HEAD
 evolutionary_operations.h
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
 algorithm
@@ -31,6 +56,18 @@ algorithm
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.h
 structures/structures.h
 -
+=======
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.h
+evolutionary_operations.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h
+structures/structures.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/structures/structures.h
+std-algorithm/Evolution.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/std-algorithm/Evolution.h
+island-model-algorithm/Island_model_evolution.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/island-model-algorithm/Island_model_evolution.h
+>>>>>>> kuba
 
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp
 random
@@ -52,6 +89,13 @@ vector
 utility
 -
 
+<<<<<<< HEAD
+=======
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.cpp
+structures.h
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
+
+>>>>>>> kuba
 /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h
 vector
 -
