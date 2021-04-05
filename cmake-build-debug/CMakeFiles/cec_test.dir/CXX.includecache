@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/CEC_2017/main.cpp
+stdio.h
+-
+math.h
+-
+malloc.h
+-
+
