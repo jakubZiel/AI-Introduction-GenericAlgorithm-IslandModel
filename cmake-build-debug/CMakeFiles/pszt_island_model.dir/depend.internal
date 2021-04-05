@@ -7,6 +7,11 @@ CMakeFiles/pszt_island_model.dir/island-model-algorithm/Island_model_evolution.c
 CMakeFiles/pszt_island_model.dir/main.cpp.o
  /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/main.cpp
 CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.o
+<<<<<<< HEAD
+=======
+ ../island-model-algorithm/Island_model_evolution.h
+ ../std-algorithm/Evolution.h
+>>>>>>> kuba
  ../structures/structures.h
  /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.cpp
  /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.h
