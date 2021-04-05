@@ -16,7 +16,7 @@ Evolution::Evolution(int pop_size, double cross_prob, double mutation_pwr, int g
     genome_length = gen_length;
 }
 
-void Evolution::run(double reproducing_fraction, int elitism_count) {
+void Evolution::run(int elitism_count) {
 
     generation_count = 0;
 
@@ -31,7 +31,7 @@ void Evolution::run(double reproducing_fraction, int elitism_count) {
     while (generation_count < max_generations){
 
 
-        reproduced_genomes = choosing_for_reproduction(population, int(population_size * reproducing_fraction));
+        reproduced_genomes = choosing_for_reproduction(population, population_size);
         genetic_mod(reproduced_genomes, mutation_strength, cross_possibility);
 
         bent_cigar_fitness(reproduced_genomes);

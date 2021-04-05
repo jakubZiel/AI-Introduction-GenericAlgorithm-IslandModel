@@ -19,7 +19,7 @@ public:
     int max_generations;
 
     Evolution(int population_size, double cross_probapility, double mutation_power, int genome_length, int max_generations);
-    void run(double reproducing_fraction, int elitism_count);
+    void run(int elitism_count);
 };
 
 

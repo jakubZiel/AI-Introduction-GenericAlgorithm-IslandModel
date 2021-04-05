@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named pszt_island_model
+
+# Build rule for target.
+pszt_island_model: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pszt_island_model
+.PHONY : pszt_island_model
+
+# fast build rule for target.
+pszt_island_model/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/build
+.PHONY : pszt_island_model/fast
+
+#=============================================================================
 # Target rules for targets named test
 
 # Build rule for target.
@@ -144,17 +157,71 @@ test/fast:
 .PHONY : test/fast
 
 #=============================================================================
-# Target rules for targets named pszt_island_model
+# Target rules for targets named cec_test
 
 # Build rule for target.
-pszt_island_model: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pszt_island_model
-.PHONY : pszt_island_model
+cec_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cec_test
+.PHONY : cec_test
 
 # fast build rule for target.
-pszt_island_model/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/build
-.PHONY : pszt_island_model/fast
+cec_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cec_test.dir/build.make CMakeFiles/cec_test.dir/build
+.PHONY : cec_test/fast
+
+CEC_2017/cec17_test_func.o: CEC_2017/cec17_test_func.cpp.o
+
+.PHONY : CEC_2017/cec17_test_func.o
+
+# target to build an object file
+CEC_2017/cec17_test_func.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cec_test.dir/build.make CMakeFiles/cec_test.dir/CEC_2017/cec17_test_func.cpp.o
+.PHONY : CEC_2017/cec17_test_func.cpp.o
+
+CEC_2017/cec17_test_func.i: CEC_2017/cec17_test_func.cpp.i
+
+.PHONY : CEC_2017/cec17_test_func.i
+
+# target to preprocess a source file
+CEC_2017/cec17_test_func.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cec_test.dir/build.make CMakeFiles/cec_test.dir/CEC_2017/cec17_test_func.cpp.i
+.PHONY : CEC_2017/cec17_test_func.cpp.i
+
+CEC_2017/cec17_test_func.s: CEC_2017/cec17_test_func.cpp.s
+
+.PHONY : CEC_2017/cec17_test_func.s
+
+# target to generate assembly for a file
+CEC_2017/cec17_test_func.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cec_test.dir/build.make CMakeFiles/cec_test.dir/CEC_2017/cec17_test_func.cpp.s
+.PHONY : CEC_2017/cec17_test_func.cpp.s
+
+CEC_2017/main.o: CEC_2017/main.cpp.o
+
+.PHONY : CEC_2017/main.o
+
+# target to build an object file
+CEC_2017/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cec_test.dir/build.make CMakeFiles/cec_test.dir/CEC_2017/main.cpp.o
+.PHONY : CEC_2017/main.cpp.o
+
+CEC_2017/main.i: CEC_2017/main.cpp.i
+
+.PHONY : CEC_2017/main.i
+
+# target to preprocess a source file
+CEC_2017/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cec_test.dir/build.make CMakeFiles/cec_test.dir/CEC_2017/main.cpp.i
+.PHONY : CEC_2017/main.cpp.i
+
+CEC_2017/main.s: CEC_2017/main.cpp.s
+
+.PHONY : CEC_2017/main.s
+
+# target to generate assembly for a file
+CEC_2017/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cec_test.dir/build.make CMakeFiles/cec_test.dir/CEC_2017/main.cpp.s
+.PHONY : CEC_2017/main.cpp.s
 
 island-model-algorithm/Island_model_evolution.o: island-model-algorithm/Island_model_evolution.cpp.o
 
@@ -162,8 +229,8 @@ island-model-algorithm/Island_model_evolution.o: island-model-algorithm/Island_m
 
 # target to build an object file
 island-model-algorithm/Island_model_evolution.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/island-model-algorithm/Island_model_evolution.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o
 .PHONY : island-model-algorithm/Island_model_evolution.cpp.o
 
 island-model-algorithm/Island_model_evolution.i: island-model-algorithm/Island_model_evolution.cpp.i
@@ -172,8 +239,8 @@ island-model-algorithm/Island_model_evolution.i: island-model-algorithm/Island_m
 
 # target to preprocess a source file
 island-model-algorithm/Island_model_evolution.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/island-model-algorithm/Island_model_evolution.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.i
 .PHONY : island-model-algorithm/Island_model_evolution.cpp.i
 
 island-model-algorithm/Island_model_evolution.s: island-model-algorithm/Island_model_evolution.cpp.s
@@ -182,8 +249,8 @@ island-model-algorithm/Island_model_evolution.s: island-model-algorithm/Island_m
 
 # target to generate assembly for a file
 island-model-algorithm/Island_model_evolution.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/island-model-algorithm/Island_model_evolution.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.s
 .PHONY : island-model-algorithm/Island_model_evolution.cpp.s
 
 main.o: main.cpp.o
@@ -213,44 +280,14 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-proto.o: proto.cpp.o
-
-.PHONY : proto.o
-
-# target to build an object file
-proto.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/proto.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/proto.cpp.o
-.PHONY : proto.cpp.o
-
-proto.i: proto.cpp.i
-
-.PHONY : proto.i
-
-# target to preprocess a source file
-proto.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/proto.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/proto.cpp.i
-.PHONY : proto.cpp.i
-
-proto.s: proto.cpp.s
-
-.PHONY : proto.s
-
-# target to generate assembly for a file
-proto.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/proto.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/proto.cpp.s
-.PHONY : proto.cpp.s
-
 std-algorithm/Evolution.o: std-algorithm/Evolution.cpp.o
 
 .PHONY : std-algorithm/Evolution.o
 
 # target to build an object file
 std-algorithm/Evolution.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o
 .PHONY : std-algorithm/Evolution.cpp.o
 
 std-algorithm/Evolution.i: std-algorithm/Evolution.cpp.i
@@ -259,8 +296,8 @@ std-algorithm/Evolution.i: std-algorithm/Evolution.cpp.i
 
 # target to preprocess a source file
 std-algorithm/Evolution.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/Evolution.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/Evolution.cpp.i
 .PHONY : std-algorithm/Evolution.cpp.i
 
 std-algorithm/Evolution.s: std-algorithm/Evolution.cpp.s
@@ -269,8 +306,8 @@ std-algorithm/Evolution.s: std-algorithm/Evolution.cpp.s
 
 # target to generate assembly for a file
 std-algorithm/Evolution.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/Evolution.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/Evolution.cpp.s
 .PHONY : std-algorithm/Evolution.cpp.s
 
 std-algorithm/evolutionary_operations.o: std-algorithm/evolutionary_operations.cpp.o
@@ -279,8 +316,8 @@ std-algorithm/evolutionary_operations.o: std-algorithm/evolutionary_operations.c
 
 # target to build an object file
 std-algorithm/evolutionary_operations.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o
 .PHONY : std-algorithm/evolutionary_operations.cpp.o
 
 std-algorithm/evolutionary_operations.i: std-algorithm/evolutionary_operations.cpp.i
@@ -289,8 +326,8 @@ std-algorithm/evolutionary_operations.i: std-algorithm/evolutionary_operations.c
 
 # target to preprocess a source file
 std-algorithm/evolutionary_operations.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.i
 .PHONY : std-algorithm/evolutionary_operations.cpp.i
 
 std-algorithm/evolutionary_operations.s: std-algorithm/evolutionary_operations.cpp.s
@@ -299,8 +336,8 @@ std-algorithm/evolutionary_operations.s: std-algorithm/evolutionary_operations.c
 
 # target to generate assembly for a file
 std-algorithm/evolutionary_operations.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/std-algorithm/evolutionary_operations.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.s
 .PHONY : std-algorithm/evolutionary_operations.cpp.s
 
 structures/structures.o: structures/structures.cpp.o
@@ -309,8 +346,8 @@ structures/structures.o: structures/structures.cpp.o
 
 # target to build an object file
 structures/structures.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/structures/structures.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/structures/structures.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/structures/structures.cpp.o
 .PHONY : structures/structures.cpp.o
 
 structures/structures.i: structures/structures.cpp.i
@@ -319,8 +356,8 @@ structures/structures.i: structures/structures.cpp.i
 
 # target to preprocess a source file
 structures/structures.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/structures/structures.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/structures/structures.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/structures/structures.cpp.i
 .PHONY : structures/structures.cpp.i
 
 structures/structures.s: structures/structures.cpp.s
@@ -329,8 +366,8 @@ structures/structures.s: structures/structures.cpp.s
 
 # target to generate assembly for a file
 structures/structures.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/structures/structures.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pszt_island_model.dir/build.make CMakeFiles/pszt_island_model.dir/structures/structures.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/structures/structures.cpp.s
 .PHONY : structures/structures.cpp.s
 
 test/main.o: test/main.cpp.o
@@ -368,17 +405,21 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... cec_test"
 	@echo "... pszt_island_model"
 	@echo "... test"
+	@echo "... CEC_2017/cec17_test_func.o"
+	@echo "... CEC_2017/cec17_test_func.i"
+	@echo "... CEC_2017/cec17_test_func.s"
+	@echo "... CEC_2017/main.o"
+	@echo "... CEC_2017/main.i"
+	@echo "... CEC_2017/main.s"
 	@echo "... island-model-algorithm/Island_model_evolution.o"
 	@echo "... island-model-algorithm/Island_model_evolution.i"
 	@echo "... island-model-algorithm/Island_model_evolution.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... proto.o"
-	@echo "... proto.i"
-	@echo "... proto.s"
 	@echo "... std-algorithm/Evolution.o"
 	@echo "... std-algorithm/Evolution.i"
 	@echo "... std-algorithm/Evolution.s"

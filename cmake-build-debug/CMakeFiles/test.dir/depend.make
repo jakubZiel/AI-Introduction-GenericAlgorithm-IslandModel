@@ -4,8 +4,6 @@
 CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o: ../island-model-algorithm/Island_model_evolution.cpp
 CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o: ../island-model-algorithm/Island_model_evolution.h
 
-CMakeFiles/test.dir/proto.cpp.o: ../proto.cpp
-
 CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o: ../structures/structures.h
 CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o: ../std-algorithm/Evolution.cpp
 CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o: ../std-algorithm/Evolution.h
