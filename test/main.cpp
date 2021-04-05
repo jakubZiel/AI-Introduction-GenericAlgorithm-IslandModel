@@ -5,7 +5,7 @@
 
 int main() {
 
-    Evolution evo(10, 0.3,0.5 ,5 ,30);
+    Evolution evo(10, 0.3,5 ,5 ,30);
 
     evo.run(1, 2);
 
