@@ -3,11 +3,16 @@
 //
 #include "std-algorithm/Evolution.h"
 
+
+
 int main() {
 
-    Evolution evo(10, 0.3,5 ,5 ,30);
+    Evolution evo(20, 0.3,1.5,6 ,50);
 
-    evo.run(1, 2);
+    evo.run(2);
+
+
+
 
 
     return 0;

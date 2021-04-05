@@ -27,11 +27,47 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
+			<Target title="pszt_island_model">
+				<Option output="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/pszt_island_model" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug"/>
-				<Option type="4"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 pszt_island_model"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pszt_island_model/fast">
+				<Option output="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/pszt_island_model" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 pszt_island_model/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -83,8 +119,8 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="pszt_island_model">
-				<Option output="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/pszt_island_model" prefix_auto="0" extension_auto="0"/>
+			<Target title="cec_test">
+				<Option output="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/cec_test" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -100,14 +136,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 pszt_island_model"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 cec_test"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="pszt_island_model/fast">
-				<Option output="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/pszt_island_model" prefix_auto="0" extension_auto="0"/>
+			<Target title="cec_test/fast">
+				<Option output="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/cec_test" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -123,51 +159,63 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 pszt_island_model/fast"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 cec_test/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/CEC_2017/cec17_test_func.cpp">
+			<Option target="cec_test"/>
+		</Unit>
+		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/CEC_2017/main.cpp">
+			<Option target="cec_test"/>
+		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/island-model-algorithm/Island_model_evolution.cpp">
-			<Option target="test"/>
 			<Option target="pszt_island_model"/>
+			<Option target="test"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/island-model-algorithm/Island_model_evolution.h">
-			<Option target="test"/>
 			<Option target="pszt_island_model"/>
+			<Option target="test"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/main.cpp">
 			<Option target="pszt_island_model"/>
 		</Unit>
-		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/proto.cpp">
-			<Option target="test"/>
-			<Option target="pszt_island_model"/>
-		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.cpp">
-			<Option target="test"/>
 			<Option target="pszt_island_model"/>
+			<Option target="test"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/Evolution.h">
-			<Option target="test"/>
 			<Option target="pszt_island_model"/>
+			<Option target="test"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.cpp">
-			<Option target="test"/>
 			<Option target="pszt_island_model"/>
+			<Option target="test"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/std-algorithm/evolutionary_operations.h">
-			<Option target="test"/>
 			<Option target="pszt_island_model"/>
+			<Option target="test"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.cpp">
-			<Option target="test"/>
 			<Option target="pszt_island_model"/>
+			<Option target="test"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/structures/structures.h">
-			<Option target="test"/>
 			<Option target="pszt_island_model"/>
+			<Option target="test"/>
 		</Unit>
 		<Unit filename="/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/test/main.cpp">
 			<Option target="test"/>

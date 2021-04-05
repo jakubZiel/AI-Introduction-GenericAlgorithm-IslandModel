@@ -5,10 +5,6 @@ CMakeFiles/pszt_island_model.dir/island-model-algorithm/Island_model_evolution.c
 CMakeFiles/pszt_island_model.dir/island-model-algorithm/Island_model_evolution.cpp.o: ../island-model-algorithm/Island_model_evolution.h
 
 CMakeFiles/pszt_island_model.dir/main.cpp.o: ../main.cpp
-CMakeFiles/pszt_island_model.dir/main.cpp.o: ../std-algorithm/evolutionary_operations.h
-CMakeFiles/pszt_island_model.dir/main.cpp.o: ../structures/structures.h
-
-CMakeFiles/pszt_island_model.dir/proto.cpp.o: ../proto.cpp
 
 CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.o: ../structures/structures.h
 CMakeFiles/pszt_island_model.dir/std-algorithm/Evolution.cpp.o: ../std-algorithm/Evolution.cpp

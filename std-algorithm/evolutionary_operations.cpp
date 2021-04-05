@@ -22,7 +22,6 @@ void mutation(Genome& gen, double mut_strength){
     for (double & i : genome){
 
         std::normal_distribution<double> distribution(i, mut_strength);
-
         i = distribution(generator);
     }
 }
@@ -174,7 +173,7 @@ std::vector<Genome> succession(const std::vector<Genome>& current_gen, std::vect
     return succession_result;
 }
 
-//evaluates the fitness of all genomes in population, using Bent Cigar Function (CEC 2017)
+//evaluates the fitness of all genomes in population, using Bent Cigar Function (CEC_2017)
 // f(x) = x1^2 + 10^6*sum{i >2}(xi^2)
 void bent_cigar_fitness(std::vector<Genome> &current_population){
     for (int i=0; i<current_population.size(); i++){
