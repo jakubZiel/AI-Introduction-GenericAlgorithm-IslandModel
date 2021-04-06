@@ -5,12 +5,13 @@
 #include "Evolution.h"
 #include "evolutionary_operations.h"
 #include <algorithm>
+#include <iostream>
 
-Evolution::Evolution(int pop_size, double cross_prob, double mutation_pwr, int gen_length) : population(pop_size, gen_length) {
+Evolution::Evolution(int pop_size, double cross_probability, double mutation_pwr, int gen_length) : population(pop_size, gen_length) {
 
     generation_count = 0;
     population_size = pop_size;
-    cross_possibility = cross_prob;
+    cross_possibility = cross_probability;
     mutation_strength = mutation_pwr;
     genome_length = gen_length;
 }
@@ -47,4 +48,8 @@ void Evolution::run(int elitism_count, int max_generations) {
 
     bent_cigar_fitness(*curr_population);
     std::sort(curr_population->begin(), curr_population->end());
+}
+
+void Evolution::show_best_std_fitness() {
+    std::cout << this->population.population[0].fitness;
 }

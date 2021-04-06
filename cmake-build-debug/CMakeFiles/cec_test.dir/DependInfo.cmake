@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/CEC_2017/cec17_test_func.cpp" "/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles/cec_test.dir/CEC_2017/cec17_test_func.cpp.o"
-  "/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/CEC_2017/main.cpp" "/media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug/CMakeFiles/cec_test.dir/CEC_2017/main.cpp.o"
+  "D:/pszt-island-model/CEC_2017/cec17_test_func.cpp" "D:/pszt-island-model/cmake-build-debug/CMakeFiles/cec_test.dir/CEC_2017/cec17_test_func.cpp.obj"
+  "D:/pszt-island-model/CEC_2017/main.cpp" "D:/pszt-island-model/cmake-build-debug/CMakeFiles/cec_test.dir/CEC_2017/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
