@@ -31,4 +31,5 @@ public:
     Population(int pop_size, int gen_length);
 };
 
+
 #endif //PSZT_ISLAND_MODEL_STRUCTURES_H

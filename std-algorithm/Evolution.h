@@ -17,8 +17,10 @@ public:
     int population_size;
     int genome_length;
 
-    Evolution(int population_size, double cross_probapility, double mutation_power, int genome_length);
+    Evolution(int population_size, double cross_probability, double mutation_power, int genome_length);
     void run(int elitism_count, int max_generations);
+
+    void show_best_std_fitness();
 };
 
 
