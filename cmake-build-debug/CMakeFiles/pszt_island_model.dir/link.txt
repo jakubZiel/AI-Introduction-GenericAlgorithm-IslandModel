@@ -1,3 +1,0 @@
-"D:\CLion 2020.3.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\pszt_island_model.dir/objects.a
-C:\PROGRA~2\MINGW-~1\I686-8~1.0-W\mingw32\bin\ar.exe cr CMakeFiles\pszt_island_model.dir/objects.a @CMakeFiles\pszt_island_model.dir\objects1.rsp
-C:\PROGRA~2\MINGW-~1\I686-8~1.0-W\mingw32\bin\G__~1.EXE -g   -Wl,--whole-archive CMakeFiles\pszt_island_model.dir/objects.a -Wl,--no-whole-archive  -o pszt_island_model.exe -Wl,--out-implib,libpszt_island_model.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\pszt_island_model.dir\linklibs.rsp
