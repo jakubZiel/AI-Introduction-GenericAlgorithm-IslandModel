@@ -18,8 +18,8 @@ public:
     int genome_length;
     int max_generations;
 
-    Evolution(int population_size, double cross_probapility, double mutation_power, int genome_length, int max_generations);
-    void run(int elitism_count);
+    Evolution(int population_size, double cross_probapility, double mutation_power, int genome_length);
+    void run(int elitism_count, int max_generations);
 };
 
 

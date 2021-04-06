@@ -6,19 +6,21 @@
 #include "evolutionary_operations.h"
 #include <algorithm>
 
-Evolution::Evolution(int pop_size, double cross_prob, double mutation_pwr, int gen_length, int max_gens) : population(pop_size, gen_length) {
+Evolution::Evolution(int pop_size, double cross_prob, double mutation_pwr, int gen_length) : population(pop_size, gen_length) {
 
     generation_count = 0;
-    max_generations = max_gens;
+    max_generations = -1;
     population_size = pop_size;
     cross_possibility = cross_prob;
     mutation_strength = mutation_pwr;
     genome_length = gen_length;
 }
 
-void Evolution::run(int elitism_count) {
+void Evolution::run(int elitism_count, int max_gens) {
+
 
     generation_count = 0;
+    max_generations = max_gens;
 
     std::vector<Genome>* curr_population = &population.population;
 
