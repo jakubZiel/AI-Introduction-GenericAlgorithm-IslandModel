@@ -7,12 +7,9 @@
 
 int main() {
 
-    Evolution evo(50, 0.3,1.5,5);
+    Evolution evo(100, 0.5,1.1,10);
 
-    evo.run(2, 50);
-
-
-
+    evo.run(2, 100);
 
 
     return 0;

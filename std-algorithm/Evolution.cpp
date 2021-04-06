@@ -9,18 +9,16 @@
 Evolution::Evolution(int pop_size, double cross_prob, double mutation_pwr, int gen_length) : population(pop_size, gen_length) {
 
     generation_count = 0;
-    max_generations = -1;
     population_size = pop_size;
     cross_possibility = cross_prob;
     mutation_strength = mutation_pwr;
     genome_length = gen_length;
 }
 
-void Evolution::run(int elitism_count, int max_gens) {
+void Evolution::run(int elitism_count, int max_generations) {
 
 
     generation_count = 0;
-    max_generations = max_gens;
 
     std::vector<Genome>* curr_population = &population.population;
 
