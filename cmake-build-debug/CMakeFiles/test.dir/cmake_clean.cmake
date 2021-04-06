@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.o"
-  "CMakeFiles/test.dir/std-algorithm/Evolution.cpp.o"
-  "CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o"
-  "CMakeFiles/test.dir/structures/structures.cpp.o"
-  "CMakeFiles/test.dir/test/main.cpp.o"
-  "test"
+  "CMakeFiles/test.dir/island-model-algorithm/Island_model_evolution.cpp.obj"
+  "CMakeFiles/test.dir/std-algorithm/Evolution.cpp.obj"
+  "CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.obj"
+  "CMakeFiles/test.dir/structures/structures.cpp.obj"
+  "CMakeFiles/test.dir/test/main.cpp.obj"
+  "libtest.dll.a"
+  "test.exe"
+  "test.exe.manifest"
   "test.pdb"
 )
 

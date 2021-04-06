@@ -1,4 +1,4 @@
-/home/jakub/Apps/clion-2020.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model
+"D:\CLion 2020.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\pszt-island-model
 -- Configuring done
 -- Generating done
--- Build files have been written to: /media/jakub/SDHC/sem5/PSZT/projekt/pszt-island-model/cmake-build-debug
+-- Build files have been written to: D:/pszt-island-model/cmake-build-debug
