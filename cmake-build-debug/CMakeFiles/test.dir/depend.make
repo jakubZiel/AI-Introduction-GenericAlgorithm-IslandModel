@@ -16,7 +16,4 @@ CMakeFiles/test.dir/std-algorithm/evolutionary_operations.cpp.o: ../structures/s
 CMakeFiles/test.dir/structures/structures.cpp.o: ../structures/structures.cpp
 CMakeFiles/test.dir/structures/structures.cpp.o: ../structures/structures.h
 
-CMakeFiles/test.dir/test/main.cpp.o: ../std-algorithm/Evolution.h
-CMakeFiles/test.dir/test/main.cpp.o: ../structures/structures.h
-CMakeFiles/test.dir/test/main.cpp.o: ../test/main.cpp
 
