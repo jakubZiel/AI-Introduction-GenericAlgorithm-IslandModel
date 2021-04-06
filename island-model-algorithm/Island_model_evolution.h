@@ -10,11 +10,14 @@
 
 class Islands_Evolution{
 public:
-    Islands_Evolution(int num_of_islands, int subpopulation_size, double cross_probapility, double mutation_power, int genome_length);
+    Islands_Evolution(int num_of_islands, int subpopulation_size, double cross_probability, double mutation_power, int genome_length);
     std::vector<Evolution> evolutions;
 
-    void islands_evolution_run(int elitism_count, int all_generations, int migration_frequency);
+    void islands_evolution_run(int elitism_count, int all_generations, int num_of_migrations);
     void migration_round();
+
+    void show_best_archipelago_fitness();
+
 };
 
 

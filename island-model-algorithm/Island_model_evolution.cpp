@@ -5,6 +5,7 @@
 #include <structures/structures.h>
 #include "Island_model_evolution.h"
 #include <std-algorithm/Evolution.h>
+#include <iostream>
 
 
 void Islands_Evolution::migration_round(){
@@ -36,29 +37,41 @@ void Islands_Evolution::migration_round(){
     }
 }
 
-Islands_Evolution::Islands_Evolution(int num_of_islands, int subpopulation_size, double cross_probapility, double mutation_power, int genome_length){
+Islands_Evolution::Islands_Evolution(int num_of_islands, int subpopulation_size, double cross_probability, double mutation_power, int genome_length){
 
     for (int i=0; i< num_of_islands; i++){
-        Evolution newEvolution = *new Evolution(subpopulation_size, cross_probapility, mutation_power, genome_length);
+        Evolution newEvolution = *new Evolution(subpopulation_size, cross_probability, mutation_power, genome_length);
         evolutions.push_back(newEvolution);
     }
 }
 
 
-void Islands_Evolution::islands_evolution_run(int elitism_count, int all_generations, int migration_frequency) {
+void Islands_Evolution::islands_evolution_run(int elitism_count, int all_generations, int num_of_migrations) {
 
-    int generations_between_migrations = all_generations/migration_frequency;
+    int generations_between_migrations = all_generations / num_of_migrations;
 
-    int num_of_generations = 0;
-    while (num_of_generations < all_generations){
+    int migrations_done = 0;
+    while (migrations_done < num_of_migrations){
 
         for (int j=0; j<this->evolutions.size(); j++){
             this->evolutions[j].run(elitism_count, generations_between_migrations);
         }
 
         migration_round();
-
-        num_of_generations += generations_between_migrations + 1;
+        migrations_done++;
     }
+
+}
+
+void Islands_Evolution::show_best_archipelago_fitness() {
+
+    double min_fitness = this->evolutions[0].population.population[0].fitness;
+
+    for (int i=0; i<this->evolutions.size(); i++){
+        Population * curr_island_population = &(this->evolutions[i].population);
+        min_fitness = std::min(min_fitness, curr_island_population->population[0].fitness);
+    }
+
+    std::cout << min_fitness;
 
 }
