@@ -11,6 +11,8 @@ int main() {
 
     evo.run(2, 100);
 
+    evo.run(2, 100);
+
 
     return 0;
 }
