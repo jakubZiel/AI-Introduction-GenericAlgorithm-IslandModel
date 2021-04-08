@@ -11,7 +11,7 @@
 typedef std::pair<double, double> range;
 
 //basic mutation, as a driving force behind exploration
-//it happens for every new genome chosen for in process of choosing_for_reproduction
+//it happens for every new genome chosen in choose_for_reproduction()
 void mutation(Genome& gen, double mut_strength){
 
     std::vector<double> &genome = gen.genome;
@@ -44,17 +44,17 @@ Genome crossover(const Genome& par1, const Genome& par2){
 
     return child;
 }
-//choosing_for_reproduction based on rank in population, should be called when population is already sorted.
-//  0 ====>  |        1st best        |      2nd      |    3rd    |  4th  |  5th  | 6th |  <====  1
-// Probability of being chosen for tournament which the winner gets to reproduce
 
-double reproduction_possibility(int rank, int population_size){
+//value that represents probapility of being chosen for tournament
+double rank_value(int rank, int population_size){
     auto mi = (double)population_size;
 
     return (-2 * rank + 1. + 2. * mi ) / std::pow(mi, 2);
 }
 
 //building array of probabilities for sorted population
+// array_of_probabilities models probapility distribution of being chosen for tournament
+//  0 ====>  |        1st best        |      2nd      |    3rd    |  4th  |  5th  | 6th |  <====  1
 
 std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
     std::vector<range> probabilities;
@@ -63,7 +63,7 @@ std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
 
     for (int i = 0; i < genomes.size(); i++) {
         curr_range.first = current;
-        curr_range.second = current = current + reproduction_possibility(i + 1, genomes.size());
+        curr_range.second = current = current + rank_value(i + 1, genomes.size());
 
         probabilities.push_back(curr_range);
     }
@@ -77,9 +77,9 @@ std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
     return probabilities;
 }
 
-//choose base choosing_for_reproduction set by playing tournaments, winner of tournament
+//choose base choose_for_reproduction set by playing tournaments, winner of tournament
 // is begin added to set. There might be the same subjects chosen multiple times.
-std::vector<Genome> choosing_for_reproduction(Population& population, int number_of_chosen){
+std::vector<Genome> choose_for_reproduction(Population& population, int number_of_chosen){
 
     std::uniform_real_distribution<double> distribution(0., 1.);
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
@@ -88,7 +88,6 @@ std::vector<Genome> choosing_for_reproduction(Population& population, int number
     std::vector<range> probabilities = array_of_probabilities(population.population);
 
     std::vector<Genome> chosen_genomes;
-
     std::vector<std::pair<int, Genome>> tournament;
 
     while (chosen_genomes.size() != number_of_chosen){
@@ -116,6 +115,7 @@ std::vector<Genome> choosing_for_reproduction(Population& population, int number
     return chosen_genomes;
 }
 
+//perform mutation and crossing operation on population
 void genetic_mod(std::vector<Genome> &reproduced, double mut_strength, double cross_possibility){
 
     std::uniform_real_distribution<double> distribution(0., 1.);
@@ -125,9 +125,6 @@ void genetic_mod(std::vector<Genome> &reproduced, double mut_strength, double cr
 
     std::uniform_int_distribution<int> distribution_int(0, reproduced.size() - 1);
     double prob_result;
-
-    //TODO:
-    //std::vector<Genome> offspring;
 
     int number_of_attempts = reproduced.size();
 
@@ -139,9 +136,6 @@ void genetic_mod(std::vector<Genome> &reproduced, double mut_strength, double cr
             int parent2 = distribution_int(generator);
 
             reproduced.push_back(crossover(reproduced[parent1], reproduced[parent2]));
-
-            //TODO:
-            //offspring.push_back(crossover(reproduced[parent1], reproduced[parent2]));
         }
     }
 
@@ -151,8 +145,8 @@ void genetic_mod(std::vector<Genome> &reproduced, double mut_strength, double cr
 }
 
 
-//current is sorted, new is sorted
-//succession set is elitism count best subjects from new_gen and then rest is best genomes from new_gen and current_gen
+//current should be sorted, new should be sorted
+//succession set is elitism count best subjects from current_gen and then rest is the best genomes from new_gen
 std::vector<Genome> succession(const std::vector<Genome>& current_gen, std::vector<Genome> &new_gen, int elitism_count) {
     std::vector<Genome> succession_result;
 

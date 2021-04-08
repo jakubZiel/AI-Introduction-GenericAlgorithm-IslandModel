@@ -11,7 +11,7 @@
 class Genome;
 class Population;
 
-std::vector<Genome> choosing_for_reproduction(Population& population, int number_of_chosen);
+std::vector<Genome> choose_for_reproduction(Population& population, int number_of_chosen);
 
 void mutation(Genome& genome, double mut_strength);
 
