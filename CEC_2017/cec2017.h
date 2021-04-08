@@ -30,8 +30,6 @@ void cec_2017_adapter(double *x, double *f, std::vector<Genome> &population, int
 
         population[i].fitness = f[i];
     }
+
 }
-
-
-
 #endif //PSZT_ISLAND_MODEL_CEC2017_H

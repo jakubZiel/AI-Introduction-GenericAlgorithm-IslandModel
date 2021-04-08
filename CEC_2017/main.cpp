@@ -18,14 +18,17 @@ int main()
 	int dimensions, population_size;
 	double *f,*x;
 	dimensions=10;
-	population_size=1;
-	x=(double *)malloc(dimensions*population_size*sizeof(double));
+	population_size=4;
+	x=(double *)malloc(dimensions*population_size * sizeof(double));
 	f=(double *)malloc(sizeof(double)  *  population_size);
 
 
 	std::vector<Genome> pop;
 
     Genome g = Genome(10);
+    pop.push_back(g);
+    pop.push_back(g);
+    pop.push_back(g);
     pop.push_back(g);
 
 	cec_2017_adapter(x,f,pop,1);
