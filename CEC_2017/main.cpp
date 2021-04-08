@@ -4,8 +4,6 @@
   Sep. 10th 2016
 */
 
-
-#include <malloc.h>
 #include "cec2017.h"
 
 
