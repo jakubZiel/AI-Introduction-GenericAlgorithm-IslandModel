@@ -19,9 +19,8 @@ int main()
 	double *f,*x;
 	dimensions=10;
 	population_size=4;
-	x=(double *)malloc(dimensions*population_size * sizeof(double));
-	f=(double *)malloc(sizeof(double)  *  population_size);
 
+	init_cec_2017_adapter(x,f,population_size, dimensions);
 
 	std::vector<Genome> pop;
 
