@@ -1,0 +1,8 @@
+//
+// Created by jakub on 08.04.2021.
+//
+
+#ifndef PSZT_ISLAND_MODEL_CEC2017_H
+#define PSZT_ISLAND_MODEL_CEC2017_H
+
+#endif //PSZT_ISLAND_MODEL_CEC2017_H
