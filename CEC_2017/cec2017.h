@@ -38,5 +38,21 @@ void init_cec_2017_adapter( double *&population,  double *&fitness, int populati
 }
 
 
+double *OShift,*M,*y,*z,*x_bound;
+int ini_flag=0,n_flag,func_flag, *SS;
+
+
+
+void free_cec_2017_adapter(double *population, double *fitness){
+
+    free(population);
+    free(fitness);
+    free(y);
+    free(z);
+    free(M);
+    free(OShift);
+    free(x_bound);
+    free(SS);
+}
 
 #endif //PSZT_ISLAND_MODEL_CEC2017_H

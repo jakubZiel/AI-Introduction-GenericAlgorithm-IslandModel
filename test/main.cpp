@@ -9,7 +9,7 @@
 
 int main() {
 
-   Evolution evo(100, 0.5,1.2,15);
+   Evolution evo(100, 0.5,1.2,10);
 
    evo.run(2, 150);
    evo.show_best_std_fitness();
@@ -20,6 +20,5 @@ int main() {
     ies.islands_evolution_run(2, 150, 10);
 
     ies.show_best_archipelago_fitness();
-
     return 0;
 }

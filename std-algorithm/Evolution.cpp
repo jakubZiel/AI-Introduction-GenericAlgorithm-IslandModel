@@ -6,6 +6,7 @@
 #include "evolutionary_operations.h"
 #include <algorithm>
 #include <iostream>
+#include "CEC_2017/cec2017.h"
 
 Evolution::Evolution(int pop_size, double cross_probability, double mutation_pwr, int gen_length) : population(pop_size, gen_length) {
 
@@ -18,7 +19,6 @@ Evolution::Evolution(int pop_size, double cross_probability, double mutation_pwr
 
 // performs evolution that last max_generations cycles
 void Evolution::run(int elitism_count, int max_generations) {
-
 
     generation_count = 0;
 

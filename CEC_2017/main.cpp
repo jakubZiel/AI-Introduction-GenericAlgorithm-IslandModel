@@ -5,10 +5,9 @@
 */
 
 #include "cec2017.h"
+#include <algorithm>
 
 
-double *OShift,*M,*y,*z,*x_bound;
-int ini_flag=0,n_flag,func_flag,*SS;
 
 
 int main()
@@ -16,27 +15,36 @@ int main()
 	int dimensions, population_size;
 	double *f,*x;
 	dimensions=10;
-	population_size=4;
+	population_size=12;
 
 	init_cec_2017_adapter(x,f,population_size, dimensions);
 
 	std::vector<Genome> pop;
 
     Genome g = Genome(10);
+    Genome g1 = Genome(10);
+    Genome g2 = Genome(10);
+    Genome g3 = Genome(10);
+
     pop.push_back(g);
+    pop.push_back(g1);
+    pop.push_back(g2);
+    pop.push_back(g3);
     pop.push_back(g);
+    pop.push_back(g1);
+    pop.push_back(g2);
+    pop.push_back(g3);
     pop.push_back(g);
-    pop.push_back(g);
+    pop.push_back(g1);
+    pop.push_back(g2);
+    pop.push_back(g3);
+
 
 	cec_2017_adapter(x,f,pop,1);
 
-	free(x);
-	free(f);
-	free(y);
-	free(z);
-	free(M);
-	free(OShift);
-	free(x_bound);
+	std::sort(pop.begin(), pop.end());
+
+    free_cec_2017_adapter(x, f);
 }
 
 
