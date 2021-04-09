@@ -16,7 +16,7 @@ int main() {
    std::cout << std::endl;
 
 
-    Islands_Evolution ies(10, 10, 0.5, 1.2, 15);
+    Islands_Evolution ies(10, 10, 0.5, 1.2, 10);
     ies.islands_evolution_run(2, 150, 10);
 
     ies.show_best_archipelago_fitness();

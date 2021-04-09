@@ -9,6 +9,6 @@ add_executable(cec_test CEC_2017/main.cpp CEC_2017/cec17_test_func.cpp CEC_2017/
 
 
 
-add_executable(integration integration/main.cpp std-algorithm/evolutionary_operations.h structures/structures.h structures/structures.cpp std-algorithm/evolutionary_operations.cpp std-algorithm/Evolution.h  island-model-algorithm/Island_model_evolution.cpp island-model-algorithm/Island_model_evolution.h CEC_2017/cec2017.h CEC_2017/cec17_test_func.cpp integration/integration.cpp)
+add_executable(integration integration/main.cpp std-algorithm/evolutionary_operations.h structures/structures.h structures/structures.cpp std-algorithm/evolutionary_operations.cpp std-algorithm/Evolution.h island-model-algorithm/Island_model_evolution.h CEC_2017/cec2017.h CEC_2017/cec17_test_func.cpp integration/integration.cpp island-model-algorithm/Island_model_evolution.cpp)
 
 include_directories(${PROJECT_SOURCE_DIR})
