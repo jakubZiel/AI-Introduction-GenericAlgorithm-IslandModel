@@ -55,7 +55,7 @@ void Islands_Evolution::islands_evolution_run(int elitism_count, int all_generat
     while (migrations_done < num_of_migrations){
 
         for (int j=0; j<this->evolutions.size(); j++){
-            this->evolutions[j].run(elitism_count, generations_between_migrations);
+            this->evolutions[j].run(elitism_count, generations_between_migrations, 1);
         }
 
         migration_round();

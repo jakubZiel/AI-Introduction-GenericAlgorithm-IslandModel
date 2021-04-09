@@ -18,7 +18,7 @@ Evolution::Evolution(int pop_size, double cross_probability, double mutation_pwr
 }
 
 // performs evolution that last max_generations cycles
-void Evolution::run(int elitism_count, int max_generations) {
+void Evolution::run(int elitism_count, int max_generations, int func_num) {
 
     generation_count = 0;
 
