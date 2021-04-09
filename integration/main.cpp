@@ -9,7 +9,7 @@ int main() {
 
     Evolution evo(100, 0.5,10,10);
 
-    evo.run(2, 150);
+    evo.run(2, 150, 1);
     evo.show_best_std_fitness();
     std::cout << std::endl;
 
