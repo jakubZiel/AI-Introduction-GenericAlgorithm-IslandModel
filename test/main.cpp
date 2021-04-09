@@ -3,22 +3,22 @@
 //
 #include <iostream>
 #include "std-algorithm/Evolution.h"
-#include "island-model-algorithm/island_model_evolution.h"
+#include "island-model-algorithm/Island_model_evolution.h"
+
 
 
 int main() {
 
-   Evolution evo(50, 0.3,1.5,5);
+   Evolution evo(100, 0.5,1.2,10);
 
-   evo.run(2, 50);
+   evo.run(2, 150);
    evo.show_best_std_fitness();
    std::cout << std::endl;
 
 
-    Islands_Evolution ies(5, 10, 0.3, 1.5, 5);
-    ies.islands_evolution_run(2, 20, 4);
+    Islands_Evolution ies(10, 10, 0.5, 1.2, 15);
+    ies.islands_evolution_run(2, 150, 10);
 
     ies.show_best_archipelago_fitness();
-
     return 0;
 }

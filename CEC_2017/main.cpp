@@ -4,74 +4,47 @@
   Sep. 10th 2016
 */
 
-#include <stdio.h>
-#include <math.h>
-#include <malloc.h>
+#include "cec2017.h"
+#include <algorithm>
 
 
-void cec17_test_func(double *, double *,int,int,int);
-
-double *OShift,*M,*y,*z,*x_bound;
-int ini_flag=0,n_flag,func_flag,*SS;
 
 
 int main()
 {
-	int i,j,k,n,m,func_num;
+	int dimensions, population_size;
 	double *f,*x;
-	FILE *fpt;
-	char FileName[30];
-	m=2; //population
-	n=10;//dimensions
-	x=(double *)malloc(m*n*sizeof(double));
-	f=(double *)malloc(sizeof(double)  *  m);
-	for (i = 0; i < 30; i++)
-	{
-		func_num=i+1;
-		sprintf(FileName, "input_data/shift_data_%d.txt", func_num);
+	dimensions=10;
+	population_size=12;
 
-		fpt = fopen(FileName,"r");
-		if (fpt==NULL)
-		{
-			printf("\n Error: Cannot open input file for reading \n");
-		}
-		
-		if (x==NULL)
-			printf("\nError: there is insufficient memory available!\n");
+	init_cec_2017_adapter(x,f,population_size, dimensions);
 
-		for(k=0;k<n;k++)
-		{
-				fscanf(fpt,"%Lf",&x[k]);
-				/*printf("%Lf\n",x[k]);*/
-		}
+	std::vector<Genome> pop;
 
-		fclose(fpt);
+    Genome g = Genome(10);
+    Genome g1 = Genome(10);
+    Genome g2 = Genome(10);
+    Genome g3 = Genome(10);
 
-			for (j = 0; j < n; j++)
-			{
-				x[1*n+j]=0.0;
-				/*printf("%Lf\n",x[1*n+j]);*/
-			}
-		
-		
-		for (k = 0; k < 1; k++)
-		{
-			cec17_test_func(x, f, n,m,func_num);
-			for (j = 0; j < 2; j++)
-			{
-				printf(" f%d(x[%d]) = %Lf,",func_num,j+1,f[j]);
-			}
-			printf("\n");
-		}
-	
-	}
-	free(x);
-	free(f);
-	free(y);
-	free(z);
-	free(M);
-	free(OShift);
-	free(x_bound);
+    pop.push_back(g);
+    pop.push_back(g1);
+    pop.push_back(g2);
+    pop.push_back(g3);
+    pop.push_back(g);
+    pop.push_back(g1);
+    pop.push_back(g2);
+    pop.push_back(g3);
+    pop.push_back(g);
+    pop.push_back(g1);
+    pop.push_back(g2);
+    pop.push_back(g3);
+
+
+	cec_2017_adapter(x,f,pop,1);
+
+	std::sort(pop.begin(), pop.end());
+
+    free_cec_2017_adapter(x, f);
 }
 
 

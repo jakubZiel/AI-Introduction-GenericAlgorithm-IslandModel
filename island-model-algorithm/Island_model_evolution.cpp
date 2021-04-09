@@ -6,6 +6,7 @@
 #include "Island_model_evolution.h"
 #include <std-algorithm/Evolution.h>
 #include <iostream>
+#include <algorithm>
 
 
 void Islands_Evolution::migration_round(){
@@ -16,8 +17,8 @@ void Islands_Evolution::migration_round(){
 
         std::vector<Genome> * curr_population = &evolutions[i].population.population;
 
-        //populations are sorted, 5% best genomes migrate
-        int num_of_migrating = 0.05 * (curr_population->size());
+        //populations are sorted, 10% best genomes migrate
+        int num_of_migrating = int(0.1 * curr_population->size());
         if (num_of_migrating == 0)
             num_of_migrating = 1;
 
@@ -28,7 +29,7 @@ void Islands_Evolution::migration_round(){
         curr_population->erase(curr_population->begin(), curr_population->begin()+num_of_migrating);
 
         //get onto the next island
-        int next_island = (i+1)%evolutions.size();
+        int next_island = (i+1) % int(evolutions.size());
         curr_population = &evolutions[next_island].population.population;
 
         curr_population->insert(curr_population->end(), migrating.begin(), migrating.end());
@@ -67,11 +68,14 @@ void Islands_Evolution::show_best_archipelago_fitness() {
 
     double min_fitness = this->evolutions[0].population.population[0].fitness;
 
+
+    std::sort(evolutions.begin(), evolutions.end(),[](Evolution &e1, Evolution &e2){ return e1.population.population[0] < e2.population.population[0];});
+
     for (int i=0; i<this->evolutions.size(); i++){
         Population * curr_island_population = &(this->evolutions[i].population);
         min_fitness = std::min(min_fitness, curr_island_population->population[0].fitness);
     }
 
-    std::cout << min_fitness;
+    std::cout <<"isl model evolution: " << min_fitness;
 
 }

@@ -6,6 +6,7 @@
 #include "evolutionary_operations.h"
 #include <algorithm>
 #include <iostream>
+#include "CEC_2017/cec2017.h"
 
 Evolution::Evolution(int pop_size, double cross_probability, double mutation_pwr, int gen_length) : population(pop_size, gen_length) {
 
@@ -16,8 +17,8 @@ Evolution::Evolution(int pop_size, double cross_probability, double mutation_pwr
     genome_length = gen_length;
 }
 
+// performs evolution that last max_generations cycles
 void Evolution::run(int elitism_count, int max_generations) {
-
 
     generation_count = 0;
 
@@ -32,7 +33,7 @@ void Evolution::run(int elitism_count, int max_generations) {
     while (generation_count < max_generations){
 
 
-        reproduced_genomes = choosing_for_reproduction(population, population_size);
+        reproduced_genomes = choose_for_reproduction(population, population_size);
         genetic_mod(reproduced_genomes, mutation_strength, cross_possibility);
 
         bent_cigar_fitness(reproduced_genomes);
@@ -51,5 +52,5 @@ void Evolution::run(int elitism_count, int max_generations) {
 }
 
 void Evolution::show_best_std_fitness() {
-    std::cout << this->population.population[0].fitness;
+    std::cout << "std model evolution: " << this->population.population[0].fitness;
 }
