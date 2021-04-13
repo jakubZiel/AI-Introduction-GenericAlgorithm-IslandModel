@@ -9,15 +9,15 @@
 
 int main() {
 
-   Evolution evo(100, 0.5,1.2,10);
+   Evolution evo(1000, 0.5,1,10);
 
-   evo.run(2, 150, 1);
+   evo.run(1, 1000, 1);
    evo.show_best_std_fitness();
    std::cout << std::endl;
 
 
-    Islands_Evolution ies(10, 10, 0.5, 1.2, 10);
-    ies.islands_evolution_run(2, 150, 10);
+    Islands_Evolution ies(10, 100, 0.5, 1, 10);
+    ies.islands_evolution_run(1, 1000, 10, -1);
 
     ies.show_best_archipelago_fitness();
     return 0;

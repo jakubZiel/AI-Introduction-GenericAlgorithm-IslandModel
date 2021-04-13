@@ -7,7 +7,7 @@
 #include <std-algorithm/Evolution.h>
 #include <iostream>
 #include <algorithm>
-
+#include "CEC_2017/cec2017.h"
 
 void Islands_Evolution::migration_round(){
 
@@ -64,12 +64,10 @@ void Islands_Evolution::islands_evolution_run(int elitism_count, int all_generat
 
 }
 
+
 void Islands_Evolution::show_best_archipelago_fitness() {
 
     double min_fitness = this->evolutions[0].population.population[0].fitness;
-
-
-    std::sort(evolutions.begin(), evolutions.end(),[](Evolution &e1, Evolution &e2){ return e1.population.population[0] < e2.population.population[0];});
 
     for (int i=0; i<this->evolutions.size(); i++){
         Population * curr_island_population = &(this->evolutions[i].population);
@@ -77,5 +75,88 @@ void Islands_Evolution::show_best_archipelago_fitness() {
     }
 
     std::cout <<"isl model evolution: " << min_fitness;
+}
+
+
+double Islands_Evolution::get_best_from_archipelago(){
+    std::sort(evolutions.begin(), evolutions.end(),[](Evolution &e1, Evolution &e2){ return e1.population.population[0] < e2.population.population[0];});
+    return evolutions[0].population.population[0].fitness;
+}
+
+void Islands_Evolution::run_cec_std(int elitism_count, int all_generations, int num_of_migrations, int func_num, int runs, double *errors) {
+
+    int generation_counter = 0;
+
+    int sub_population_size = evolutions[0].population_size;
+    int dimensions = evolutions[0].genome_length;
+
+    double *population_ptr, *fitness_ptr;
+    std::vector<Genome> *curr_population;
+
+    for (Evolution &e : evolutions){
+        curr_population = &e.population.population;
+        init_cec_2017_adapter(population_ptr, fitness_ptr, sub_population_size, dimensions);
+        cec_2017_adapter(population_ptr, fitness_ptr, *curr_population, func_num);
+    }
+
+
+
+    while (generation_counter < all_generations){
+
+
+        if (generation_counter % all_generations / num_of_migrations == 0)
+            migration_round();
+
+
+        record_best(errors, generation_counter, all_generations);
+        generation_counter++;
+    }
+
+
+}
+
+void Islands_Evolution::record_best(double *errors, int curr_generation, int max_generations){
+
+    if (max_generations * 0.01 == curr_generation )
+        errors[0] = get_best_from_archipelago();
+
+    if (max_generations * 0.02 == curr_generation )
+        errors[1] = get_best_from_archipelago();
+
+    if (max_generations * 0.03 == curr_generation )
+        errors[2] = get_best_from_archipelago();
+
+    if (max_generations * 0.05 == curr_generation )
+        errors[3] = get_best_from_archipelago();
+
+    if (max_generations * 0.1 == curr_generation )
+        errors[4] = get_best_from_archipelago();
+
+    if (max_generations * 0.2 == curr_generation )
+        errors[5] = get_best_from_archipelago();
+
+    if (max_generations * 0.3 == curr_generation )
+        errors[6] = get_best_from_archipelago();
+
+    if (max_generations * 0.4 == curr_generation )
+        errors[7] = get_best_from_archipelago();
+
+    if (max_generations * 0.5 == curr_generation )
+        errors[8] = get_best_from_archipelago();
+
+    if (max_generations * 0.6 == curr_generation )
+        errors[9] = get_best_from_archipelago();
+
+    if (max_generations * 0.7 == curr_generation )
+        errors[10] = get_best_from_archipelago();
+
+    if (max_generations * 0.8 == curr_generation )
+        errors[11] = get_best_from_archipelago();
+
+    if (max_generations * 0.9 == curr_generation )
+        errors[12] = get_best_from_archipelago();
+
+    if (max_generations - 1 == curr_generation )
+        errors[13] = get_best_from_archipelago();
 
 }

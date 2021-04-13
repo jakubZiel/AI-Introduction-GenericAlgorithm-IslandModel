@@ -10,7 +10,7 @@
 #include "std-algorithm/evolutionary_operations.h"
 #include <algorithm>
 #include <iostream>
-#include "CEC_2017/cec2017.h"
+#include <CEC_2017/cec2017.h>
 
 Evolution::Evolution(int pop_size, double cross_probability, double mutation_pwr, int gen_length) : population(pop_size, gen_length) {
 
@@ -20,7 +20,7 @@ Evolution::Evolution(int pop_size, double cross_probability, double mutation_pwr
     mutation_strength = mutation_pwr;
     genome_length = gen_length;
 }
-
+void free_space(double *, double *);
 // performs evolution that last max_generations cycles
 void Evolution::run(int elitism_count, int max_generations, int func_num) {
 
@@ -33,6 +33,7 @@ void Evolution::run(int elitism_count, int max_generations, int func_num) {
 
     init_cec_2017_adapter(population_ptr, fitness_ptr, population_size, dimensions);
     cec_2017_adapter(population_ptr, fitness_ptr, *curr_population, func_num);
+    free_space(population_ptr, fitness_ptr);
 
     std::sort(curr_population->begin(), curr_population->end());
     Genome best_genome = (*curr_population)[0];
@@ -46,6 +47,7 @@ void Evolution::run(int elitism_count, int max_generations, int func_num) {
 
         init_cec_2017_adapter(population_ptr, fitness_ptr, reproduced_genomes.size(), dimensions);
         cec_2017_adapter(population_ptr, fitness_ptr, reproduced_genomes, func_num);
+        free_space(population_ptr, fitness_ptr);
 
         std::sort(reproduced_genomes.begin(), reproduced_genomes.end());
 
@@ -60,10 +62,16 @@ void Evolution::run(int elitism_count, int max_generations, int func_num) {
 
     init_cec_2017_adapter(population_ptr, fitness_ptr, population_size, dimensions);
     cec_2017_adapter(population_ptr, fitness_ptr, *curr_population, func_num);
+    free_space(population_ptr, fitness_ptr);
 
     std::sort(curr_population->begin(), curr_population->end());
 }
 
 void Evolution::show_best_std_fitness() {
     std::cout << "std model evolution: " << this->population.population[0].fitness;
+}
+
+void free_space(double *pop, double *fit){
+    delete [] pop;
+    delete [] fit;
 }

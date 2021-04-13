@@ -4,6 +4,7 @@
 #include "std-algorithm/Evolution.h"
 #include <iostream>
 #include "island-model-algorithm/Island_model_evolution.h"
+#include "benchmark/benchmark.h"
 
 void general_test(int max_generations, double cross_probability, double mutation_power, int genome_length,
                   int std_population_size, int num_of_islands, int subpopulation_size, int num_of_migrations, int func_num){
@@ -24,7 +25,7 @@ void general_test(int max_generations, double cross_probability, double mutation
 void test_population_size(int std_population_size, int num_of_islands, int subpopulation_size, int func_num){
 
     //generic config
-    int max_generations = 100;
+    int max_generations = 10000;
     double cross_probability = 0.5;
     double mutation_power = 1.2;
     int genome_length = 10;
@@ -88,11 +89,11 @@ void test_num_of_migrations(int num_of_migrations, int func_num){
 
 int main() {
 
-    test_population_size(100, 10, 10, 1);
+     generate_data_std_model(200, 0.5, 1.5, 10, 100, 4, 10, 2);
 
-    test_max_generations(100, 1);
 
-    test_num_of_migrations(10, 1);
+
+
 
      return 0;
 }
