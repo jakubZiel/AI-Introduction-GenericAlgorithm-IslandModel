@@ -13,5 +13,8 @@ void cec_2017_adapter(double *x, double *f, std::vector<Genome> &population, int
 
 void init_cec_2017_adapter( double *&population,  double *&fitness, int population_size, int dimensions);
 
+void free_space(double *, double *);
+
+void set_cec_fitness(std::vector<Genome> &population, int func_num);
 
 #endif //PSZT_ISLAND_MODEL_CEC2017_H
