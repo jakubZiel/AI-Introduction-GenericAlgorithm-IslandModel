@@ -20,7 +20,6 @@ public:
     Evolution(int population_size, double cross_probability, double mutation_power, int genome_length);
     void run(int elitism_count, int max_generations, int func_num);
 
-    void show_best_std_fitness();
 };
 
 

@@ -21,8 +21,6 @@ void generate_data_std_model(int max_generations, double cross_probability, doub
     int run_counter = 0;
     auto* errors = new double[runs * 14];
 
-
-
     while (run_counter < runs){
         Evolution std_model(std_population_size, cross_probability, mutation_power, genome_length);
 

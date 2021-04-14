@@ -5,8 +5,8 @@
 #include "Evolution.h"
 #include "evolutionary_operations.h"
 #include <algorithm>
-#include <iostream>
-#include "CEC_2017/cec2017.h"
+#include <CEC_API/cec2017.h>
+
 
 Evolution::Evolution(int pop_size, double cross_probability, double mutation_pwr, int gen_length) : population(pop_size, gen_length) {
 
@@ -24,19 +24,20 @@ void Evolution::run(int elitism_count, int max_generations, int func_num) {
 
     std::vector<Genome>* curr_population = &population.population;
 
-    bent_cigar_fitness(*curr_population);
+    set_cec_fitness(*curr_population, func_num);
 
     std::sort(curr_population->begin(), curr_population->end());
     Genome best_genome = (*curr_population)[0];
-
     std::vector<Genome> reproduced_genomes;
+
     while (generation_count < max_generations){
 
 
         reproduced_genomes = choose_for_reproduction(population, population_size);
         genetic_mod(reproduced_genomes, mutation_strength, cross_possibility);
 
-        bent_cigar_fitness(reproduced_genomes);
+        set_cec_fitness(reproduced_genomes, func_num);
+
         std::sort(reproduced_genomes.begin(), reproduced_genomes.end());
 
         if (best_genome > reproduced_genomes[0]){
@@ -47,10 +48,7 @@ void Evolution::run(int elitism_count, int max_generations, int func_num) {
         generation_count++;
     }
 
-    bent_cigar_fitness(*curr_population);
-    std::sort(curr_population->begin(), curr_population->end());
-}
 
-void Evolution::show_best_std_fitness() {
-    std::cout << "std model evolution: " << this->population.population[0].fitness;
+
+    std::sort(curr_population->begin(), curr_population->end());
 }

@@ -11,6 +11,8 @@
 #include "std-algorithm/Evolution.h"
 #include "island-model-algorithm/Island_model_evolution.h"
 
+
+
 void record_errors(double *errors, Evolution &std_model, int func_num, int elitism, int max_generations);
 
 void aggregate_data(double *errors, double &best, double &worst, double &mean, double &median, int runs);

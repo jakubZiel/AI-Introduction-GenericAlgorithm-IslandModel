@@ -3,14 +3,19 @@
 //
 #include <vector>
 #include <structures/structures.h>
-#include "CEC_2017/cec2017.h"
-
+#include "cec2017.h"
+#include "std-algorithm/evolutionary_operations.h"
 
 double *OShift,*M,*y,*z,*x_bound;
 int ini_flag,n_flag,func_flag, *SS;
 
 
 void cec_2017_adapter(double *x, double *f, std::vector<Genome> &population, int func_num){
+
+    if (func_num == 2){
+        bent_cigar_fitness(population);
+        return;
+    }
 
     int ptr = 0;
 

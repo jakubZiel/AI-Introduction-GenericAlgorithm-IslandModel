@@ -7,90 +7,10 @@
 #include <std-algorithm/Evolution.h>
 #include <iostream>
 #include <algorithm>
-#include "CEC_2017/cec2017.h"
+#include "CEC_API/cec2017.h"
 #include "std-algorithm/evolutionary_operations.h"
 
-void Islands_Evolution::migration_round(){
-
-    std::vector<Genome> migrating;
-
-    for (int i = 0; i<this->evolutions.size(); i++){
-
-        std::vector<Genome> * curr_population = &evolutions[i].population.population;
-
-        //populations are sorted, 10% best genomes migrate
-        int num_of_migrating = int(0.1 * curr_population->size());
-        if (num_of_migrating == 0)
-            num_of_migrating = 1;
-
-
-        migrating.insert(migrating.begin(), curr_population->begin(), curr_population->begin()+num_of_migrating);
-
-        //migrating genomes are deleted from their original population
-        curr_population->erase(curr_population->begin(), curr_population->begin()+num_of_migrating);
-
-        //get onto the next island
-        int next_island = (i+1) % int(evolutions.size());
-        curr_population = &evolutions[next_island].population.population;
-
-        curr_population->insert(curr_population->end(), migrating.begin(), migrating.end());
-
-        migrating.clear();
-    }
-}
-
-Islands_Evolution::Islands_Evolution(int num_of_islands, int subpopulation_size, double cross_probability, double mutation_power, int genome_length){
-
-    for (int i=0; i< num_of_islands; i++){
-        Evolution newEvolution = *new Evolution(subpopulation_size, cross_probability, mutation_power, genome_length);
-        evolutions.push_back(newEvolution);
-    }
-}
-
-
-void Islands_Evolution::islands_evolution_run(int elitism_count, int all_generations, int num_of_migrations, int func_num) {
-
-    int generations_between_migrations = all_generations / num_of_migrations;
-
-    int migrations_done = 0;
-    while (migrations_done < num_of_migrations){
-
-        for (int j=0; j<this->evolutions.size(); j++){
-            this->evolutions[j].run(elitism_count, generations_between_migrations, func_num);
-        }
-
-        migration_round();
-        migrations_done++;
-    }
-
-}
-
-
-void Islands_Evolution::show_best_archipelago_fitness() {
-
-    double min_fitness = this->evolutions[0].population.population[0].fitness;
-
-    for (int i=0; i<this->evolutions.size(); i++){
-        Population * curr_island_population = &(this->evolutions[i].population);
-        min_fitness = std::min(min_fitness, curr_island_population->population[0].fitness);
-    }
-
-    std::cout <<"isl model evolution: " << min_fitness;
-}
-
-
-double Islands_Evolution::get_best_from_archipelago(){
-    std::sort(evolutions.begin(), evolutions.end(),[](Evolution &e1, Evolution &e2){ return e1.population.population[0] < e2.population.population[0];});
-    return evolutions[0].population.population[0].fitness;
-}
-
-Genome Islands_Evolution::get_best_from_archipelago_ref(){
-    std::sort(evolutions.begin(), evolutions.end(),[](Evolution &e1, Evolution &e2){ return e1.population.population[0] < e2.population.population[0];});
-    return evolutions[0].population.population[0];
-}
-
-
-//TODO:
+//run Island model, but with intermediate recordings of best genomes
 void Islands_Evolution::run_cec(int elitism_count, int all_generations, int num_of_migrations, int func_num, double *errors) {
 
     int generation_counter = 0;
@@ -142,8 +62,65 @@ void Islands_Evolution::run_cec(int elitism_count, int all_generations, int num_
 
         generation_counter++;
     }
+}
+
+void Islands_Evolution::migration_round(){
+
+    std::vector<Genome> migrating;
+
+    for (int i = 0; i<this->evolutions.size(); i++){
+
+        std::vector<Genome> * curr_population = &evolutions[i].population.population;
+
+        //populations are sorted, 10% best genomes migrate
+        int num_of_migrating = int(0.1 * curr_population->size());
+        if (num_of_migrating == 0)
+            num_of_migrating = 1;
+
+
+        migrating.insert(migrating.begin(), curr_population->begin(), curr_population->begin()+num_of_migrating);
+
+        //migrating genomes are deleted from their original population
+        curr_population->erase(curr_population->begin(), curr_population->begin()+num_of_migrating);
+
+        //get onto the next island
+        int next_island = (i+1) % int(evolutions.size());
+        curr_population = &evolutions[next_island].population.population;
+
+        curr_population->insert(curr_population->end(), migrating.begin(), migrating.end());
+
+        migrating.clear();
+    }
+}
+
+Islands_Evolution::Islands_Evolution(int num_of_islands, int subpopulation_size, double cross_probability, double mutation_power, int genome_length){
+
+    for (int i=0; i< num_of_islands; i++){
+        Evolution newEvolution = *new Evolution(subpopulation_size, cross_probability, mutation_power, genome_length);
+        evolutions.push_back(newEvolution);
+    }
+}
+
+
+//default run if we don't have to record intermediate best genomes for CEC evaluation purposes
+void Islands_Evolution::islands_evolution_run(int elitism_count, int all_generations, int num_of_migrations, int func_num) {
+
+    int generations_between_migrations = all_generations / num_of_migrations;
+
+    int migrations_done = 0;
+    while (migrations_done < num_of_migrations){
+
+        for (int j=0; j<this->evolutions.size(); j++){
+            this->evolutions[j].run(elitism_count, generations_between_migrations, func_num);
+        }
+
+        migration_round();
+        migrations_done++;
+    }
 
 }
+
+
 
 void Islands_Evolution::record_best(double *errors, int curr_generation, int max_generations){
 
@@ -189,4 +166,27 @@ void Islands_Evolution::record_best(double *errors, int curr_generation, int max
     if (max_generations - 1 == curr_generation )
         errors[13] = get_best_from_archipelago();
 
+}
+
+void Islands_Evolution::show_best_archipelago_fitness() {
+
+    double min_fitness = this->evolutions[0].population.population[0].fitness;
+
+    for (int i=0; i<this->evolutions.size(); i++){
+        Population * curr_island_population = &(this->evolutions[i].population);
+        min_fitness = std::min(min_fitness, curr_island_population->population[0].fitness);
+    }
+
+    std::cout <<"isl model evolution: " << min_fitness;
+}
+
+
+double Islands_Evolution::get_best_from_archipelago(){
+    std::sort(evolutions.begin(), evolutions.end(),[](Evolution &e1, Evolution &e2){ return e1.population.population[0] < e2.population.population[0];});
+    return evolutions[0].population.population[0].fitness;
+}
+
+Genome Islands_Evolution::get_best_from_archipelago_ref(){
+    std::sort(evolutions.begin(), evolutions.end(),[](Evolution &e1, Evolution &e2){ return e1.population.population[0] < e2.population.population[0];});
+    return evolutions[0].population.population[0];
 }
