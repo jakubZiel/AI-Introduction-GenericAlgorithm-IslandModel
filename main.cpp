@@ -13,8 +13,8 @@ int main() {
     std::cout << "func : " << func_num << std::endl << std::endl;
 
     int max_generations = 200;
-    double mutation_strength = 0.5;
-    double cross_probability = 1.5;
+    double mutation_strength = 1.2;
+    double cross_probability = 0.5;
     int genome_length = 10;
     int pop_size = 200;
     int runs = 25;

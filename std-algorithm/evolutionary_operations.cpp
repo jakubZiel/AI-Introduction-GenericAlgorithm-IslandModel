@@ -29,7 +29,7 @@ void mutation(Genome& gen, double mut_strength){
 Genome crossover(const Genome& par1, const Genome& par2){
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     std::minstd_rand0 generator(seed);
-    std::normal_distribution<double> distribution(0,1);
+    std::uniform_real_distribution<double> distribution(0,1);
     Genome child;
 
     double weight = std::abs(distribution(generator));
