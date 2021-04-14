@@ -89,15 +89,9 @@ void test_num_of_migrations(int num_of_migrations, int func_num){
 
 int main() {
 
-     generate_data_std_model(200, 0.5, 1.5, 10, 100, 1, 10, 2);
+    generate_data_std_model(200, 0.5, 1.5, 10, 100, 1, 10, 2);
 
+    generate_data_island_model(200, 0.5, 1.5, 10, 100, 10, 10, 10, 1, 10, 2 );
 
-     Islands_Evolution is(10, 10, 0.5 , 1.5, 10);
-
-     auto *error = new double[14];
-
-     is.run_cec(2, 200, 10, 1, error);
-
-
-     return 0;
+    return 0;
 }

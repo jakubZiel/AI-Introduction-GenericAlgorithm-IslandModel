@@ -112,6 +112,8 @@ std::vector<Genome> choose_for_reproduction(Population& population, int number_o
         }
     }
 
+    probabilities.clear();
+
     return chosen_genomes;
 }
 

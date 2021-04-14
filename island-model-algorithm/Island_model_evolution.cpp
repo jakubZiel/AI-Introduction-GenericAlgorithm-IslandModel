@@ -143,12 +143,7 @@ void Islands_Evolution::run_cec(int elitism_count, int all_generations, int num_
         generation_counter++;
     }
 
-    double best = get_best_from_archipelago();
-
-    show_best_archipelago_fitness();
 }
-
-
 
 void Islands_Evolution::record_best(double *errors, int curr_generation, int max_generations){
 
