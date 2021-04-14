@@ -1,5 +1,5 @@
 //
-// Created by jakub on 21.03.2021.
+// Created by laura on 21.03.2021.
 //
 #include <random>
 #include "evolutionary_operations.h"
