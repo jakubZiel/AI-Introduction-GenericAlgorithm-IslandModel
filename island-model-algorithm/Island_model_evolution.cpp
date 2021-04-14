@@ -8,6 +8,7 @@
 #include <iostream>
 #include <algorithm>
 #include "CEC_2017/cec2017.h"
+#include "std-algorithm/evolutionary_operations.h"
 
 void Islands_Evolution::migration_round(){
 
@@ -83,37 +84,71 @@ double Islands_Evolution::get_best_from_archipelago(){
     return evolutions[0].population.population[0].fitness;
 }
 
-void Islands_Evolution::run_cec_std(int elitism_count, int all_generations, int num_of_migrations, int func_num, int runs, double *errors) {
+Genome Islands_Evolution::get_best_from_archipelago_ref(){
+    std::sort(evolutions.begin(), evolutions.end(),[](Evolution &e1, Evolution &e2){ return e1.population.population[0] < e2.population.population[0];});
+    return evolutions[0].population.population[0];
+}
+
+
+//TODO:
+void Islands_Evolution::run_cec(int elitism_count, int all_generations, int num_of_migrations, int func_num, double *errors) {
 
     int generation_counter = 0;
 
-    int sub_population_size = evolutions[0].population_size;
-    int dimensions = evolutions[0].genome_length;
-
-    double *population_ptr, *fitness_ptr;
     std::vector<Genome> *curr_population;
 
-    for (Evolution &e : evolutions){
+    double mutation_strength = evolutions[0].mutation_strength;
+    double cross_probability = evolutions[0].cross_possibility;
+
+
+    for (Evolution &e : evolutions) {
+
         curr_population = &e.population.population;
-        init_cec_2017_adapter(population_ptr, fitness_ptr, sub_population_size, dimensions);
-        cec_2017_adapter(population_ptr, fitness_ptr, *curr_population, func_num);
+        set_cec_fitness(*curr_population, func_num);
+        std::sort(curr_population->begin(), curr_population->end());
     }
 
-
+    Genome best_in_archipelago = get_best_from_archipelago_ref();
 
     while (generation_counter < all_generations){
 
+        for (Evolution &e : evolutions){
+            std::vector<Genome> reproduced_genomes;
+            curr_population = &e.population.population;
 
-        if (generation_counter % all_generations / num_of_migrations == 0)
+            reproduced_genomes = choose_for_reproduction(e.population, curr_population->size());
+            genetic_mod(reproduced_genomes, mutation_strength, cross_probability);
+
+            set_cec_fitness(reproduced_genomes, func_num);
+            std::sort(reproduced_genomes.begin(), reproduced_genomes.end());
+
+            *curr_population = succession(*curr_population, reproduced_genomes, elitism_count);
+
+            std::sort(curr_population->begin(), curr_population->end());
+        }
+
+        Genome current_best = get_best_from_archipelago_ref();
+
+        if (current_best < best_in_archipelago){
+            best_in_archipelago = current_best;
+        }
+
+        int generation_cycle = all_generations / num_of_migrations;
+
+        if (generation_counter % generation_cycle == 0 && generation_counter !=0)
             migration_round();
 
-
         record_best(errors, generation_counter, all_generations);
+
         generation_counter++;
     }
 
+    double best = get_best_from_archipelago();
 
+    show_best_archipelago_fitness();
 }
+
+
 
 void Islands_Evolution::record_best(double *errors, int curr_generation, int max_generations){
 

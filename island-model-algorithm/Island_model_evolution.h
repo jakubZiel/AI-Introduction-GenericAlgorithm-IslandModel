@@ -17,9 +17,10 @@ public:
     void migration_round();
 
     void show_best_archipelago_fitness();
-    void run_cec_std(int elitism_count, int all_generations, int num_of_migrations, int func_num, int runs, double *errors);
+    void run_cec(int elitism_count, int all_generations, int num_of_migrations, int func_num, double *errors);
 
     double get_best_from_archipelago();
+    Genome get_best_from_archipelago_ref();
 
 
     void record_best(double *errors, int curr_generation, int max_generations);

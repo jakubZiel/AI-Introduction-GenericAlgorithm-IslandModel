@@ -38,3 +38,19 @@ void init_cec_2017_adapter( double *&population,  double *&fitness, int populati
     fitness = (double *)malloc(sizeof(double)  *  population_size);
 }
 
+
+void free_space(double *pop, double *fit){
+    delete [] pop;
+    delete [] fit;
+}
+
+void set_cec_fitness(std::vector<Genome> &population, int func_num){
+    double *population_ptr, *fitness_ptr;
+    int dimensions = population[0].genome.size();
+    int population_size = population.size();
+
+    init_cec_2017_adapter(population_ptr, fitness_ptr, population_size, dimensions);
+    cec_2017_adapter(population_ptr, fitness_ptr, population, func_num);
+    free_space(population_ptr, fitness_ptr);
+
+}
