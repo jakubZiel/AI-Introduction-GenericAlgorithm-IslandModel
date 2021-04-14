@@ -48,7 +48,5 @@ void Evolution::run(int elitism_count, int max_generations, int func_num) {
         generation_count++;
     }
 
-
-
     std::sort(curr_population->begin(), curr_population->end());
 }
