@@ -45,7 +45,7 @@ Genome crossover(const Genome& par1, const Genome& par2){
     return child;
 }
 
-//value that represents probapility of being chosen for tournament
+//value that represents probability of being chosen for tournament
 double rank_value(int rank, int population_size){
     auto mi = (double)population_size;
 
@@ -53,7 +53,7 @@ double rank_value(int rank, int population_size){
 }
 
 //building array of probabilities for sorted population
-// array_of_probabilities models probapility distribution of being chosen for tournament
+// array_of_probabilities models probability distribution of being chosen for tournament
 //  0 ====>  |        1st best        |      2nd      |    3rd    |  4th  |  5th  | 6th |  <====  1
 
 std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
@@ -78,7 +78,7 @@ std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
 }
 
 //choose base choose_for_reproduction set by playing tournaments, winner of tournament
-// is begin added to set. There might be the same subjects chosen multiple times.
+// is added to set. The same subjects might be chosen multiple times.
 std::vector<Genome> choose_for_reproduction(Population& population, int number_of_chosen){
 
     std::uniform_real_distribution<double> distribution(0., 1.);
