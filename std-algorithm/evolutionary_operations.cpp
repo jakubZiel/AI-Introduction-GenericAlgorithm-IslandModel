@@ -1,12 +1,12 @@
 //
 // Created by laura on 21.03.2021.
 //
-#include <random>
 #include "evolutionary_operations.h"
 #include "../structures/structures.h"
 #include <chrono>
 #include <cmath>
 #include <algorithm>
+#include <random>
 
 typedef std::pair<double, double> range;
 
@@ -77,43 +77,29 @@ std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
     return probabilities;
 }
 
-//choose base choose_for_reproduction set by playing tournaments, winner of tournament
-// is added to set. The same subjects might be chosen multiple times.
+
 std::vector<Genome> choose_for_reproduction(Population& population, int number_of_chosen){
 
-    std::uniform_real_distribution<double> distribution(0., 1.);
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     std::minstd_rand0 generator(seed);
 
-    std::vector<range> probabilities = array_of_probabilities(population.population);
-
     std::vector<Genome> chosen_genomes;
-    std::vector<std::pair<int, Genome>> tournament;
+
+
+    std::uniform_int_distribution<int> distribution_int(0, population.population.size() - 1);
+
+    int first, second, winner;
 
     while (chosen_genomes.size() != number_of_chosen){
 
-        double random_result = distribution(generator);
+        first = distribution_int(generator);
+        second = distribution_int(generator);
 
-        for (int genome_rank = 0; genome_rank < probabilities.size(); genome_rank++){
+        winner = population.population[first] < population.population[second] ? first : second;
 
-            if (random_result >= probabilities[genome_rank].first && random_result < probabilities[genome_rank].second){
+        chosen_genomes.push_back(population.population[winner]);
 
-                tournament.emplace_back(genome_rank, population.population[genome_rank]);
-
-                if (tournament.size() == 2){
-
-                    int winner = tournament[0].first > tournament[1].first ? 0 : 1;
-
-                    chosen_genomes.push_back(tournament[winner].second);
-                    tournament.clear();
-                }
-                break;
-            }
-        }
     }
-
-    probabilities.clear();
-
     return chosen_genomes;
 }
 
@@ -128,22 +114,25 @@ void genetic_mod(std::vector<Genome> &reproduced, double mut_strength, double cr
     std::uniform_int_distribution<int> distribution_int(0, reproduced.size() - 1);
     double prob_result;
 
-    int number_of_attempts = reproduced.size();
 
-    for (int i = 0; i < number_of_attempts; i++){
+    int partner;
+
+    for (int curr_genome = 0; curr_genome < reproduced.size(); curr_genome++){
         prob_result = distribution(generator);
+
         if (prob_result <= cross_possibility){
+            partner = distribution_int(generator);
 
-            int parent1 = distribution_int(generator);
-            int parent2 = distribution_int(generator);
-
-            reproduced.push_back(crossover(reproduced[parent1], reproduced[parent2]));
+            Genome child = crossover(reproduced[curr_genome], reproduced[partner]);
+            reproduced.at(curr_genome) = child;
         }
     }
+
 
     for (Genome &genome: reproduced){
         mutation(genome, mut_strength);
     }
+
 }
 
 
