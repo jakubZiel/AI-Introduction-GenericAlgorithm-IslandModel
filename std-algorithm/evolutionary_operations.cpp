@@ -1,12 +1,12 @@
 //
 // Created by laura on 21.03.2021.
 //
+#include <random>
 #include "evolutionary_operations.h"
 #include "../structures/structures.h"
 #include <chrono>
 #include <cmath>
 #include <algorithm>
-#include <random>
 
 typedef std::pair<double, double> range;
 
@@ -45,7 +45,7 @@ Genome crossover(const Genome& par1, const Genome& par2){
     return child;
 }
 
-//value that represents probapility of being chosen for tournament
+//value that represents probability of being chosen for tournament
 double rank_value(int rank, int population_size){
     auto mi = (double)population_size;
 
@@ -53,7 +53,7 @@ double rank_value(int rank, int population_size){
 }
 
 //building array of probabilities for sorted population
-// array_of_probabilities models probapility distribution of being chosen for tournament
+// array_of_probabilities models probability distribution of being chosen for tournament
 //  0 ====>  |        1st best        |      2nd      |    3rd    |  4th  |  5th  | 6th |  <====  1
 
 std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
@@ -78,29 +78,42 @@ std::vector<range> array_of_probabilities(const std::vector<Genome> &genomes) {
 }
 
 //choose base choose_for_reproduction set by playing tournaments, winner of tournament
-// is being added to set. There might be the same subjects chosen multiple times.
+// is added to set. The same subjects might be chosen multiple times.
 std::vector<Genome> choose_for_reproduction(Population& population, int number_of_chosen){
 
+    std::uniform_real_distribution<double> distribution(0., 1.);
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     std::minstd_rand0 generator(seed);
 
+    std::vector<range> probabilities = array_of_probabilities(population.population);
+
     std::vector<Genome> chosen_genomes;
-
-
-    std::uniform_int_distribution<int> distribution_int(0, population.population.size() - 1);
-
-    int first, second, winner;
+    std::vector<std::pair<int, Genome>> tournament;
 
     while (chosen_genomes.size() != number_of_chosen){
 
-        first = distribution_int(generator);
-        second = distribution_int(generator);
+        double random_result = distribution(generator);
 
-        winner = population.population[first] < population.population[second] ? first : second;
+        for (int genome_rank = 0; genome_rank < probabilities.size(); genome_rank++){
 
-        chosen_genomes.push_back(population.population[winner]);
+            if (random_result >= probabilities[genome_rank].first && random_result < probabilities[genome_rank].second){
 
+                tournament.emplace_back(genome_rank, population.population[genome_rank]);
+
+                if (tournament.size() == 2){
+
+                    int winner = tournament[0].first > tournament[1].first ? 0 : 1;
+
+                    chosen_genomes.push_back(tournament[winner].second);
+                    tournament.clear();
+                }
+                break;
+            }
+        }
     }
+
+    probabilities.clear();
+
     return chosen_genomes;
 }
 
@@ -115,25 +128,22 @@ void genetic_mod(std::vector<Genome> &reproduced, double mut_strength, double cr
     std::uniform_int_distribution<int> distribution_int(0, reproduced.size() - 1);
     double prob_result;
 
+    int number_of_attempts = reproduced.size();
 
-    int partner;
-
-    for (int curr_genome = 0; curr_genome < reproduced.size(); curr_genome++){
+    for (int i = 0; i < number_of_attempts; i++){
         prob_result = distribution(generator);
-
         if (prob_result <= cross_possibility){
-            partner = distribution_int(generator);
 
-            Genome child = crossover(reproduced[curr_genome], reproduced[partner]);
-            reproduced.at(curr_genome) = child;
+            int parent1 = distribution_int(generator);
+            int parent2 = distribution_int(generator);
+
+            reproduced.push_back(crossover(reproduced[parent1], reproduced[parent2]));
         }
     }
-
 
     for (Genome &genome: reproduced){
         mutation(genome, mut_strength);
     }
-
 }
 
 
