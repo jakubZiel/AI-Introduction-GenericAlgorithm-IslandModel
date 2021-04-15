@@ -2,7 +2,7 @@
 // Created by jakub on 13.04.2021.
 //
 #include <vector>
-#include <structures/structures.h>
+#include "structures/structures.h"
 #include "cec2017.h"
 #include "std-algorithm/evolutionary_operations.h"
 
@@ -25,8 +25,8 @@ void cec_2017_adapter(double *x, double *f, std::vector<Genome> &population, int
 
         for (double j : *genome){
 
-            x[ptr] = j;
-            ptr++;
+            x[ptr++] = j;
+
         }
     }
 

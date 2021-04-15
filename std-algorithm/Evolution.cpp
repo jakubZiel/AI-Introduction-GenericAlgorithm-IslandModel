@@ -2,10 +2,10 @@
 // Created by jakub on 27.03.2021.
 //
 
+#include "CEC_API/cec2017.h"
 #include "Evolution.h"
 #include "evolutionary_operations.h"
 #include <algorithm>
-#include <CEC_API/cec2017.h>
 
 
 Evolution::Evolution(int pop_size, double cross_probability, double mutation_pwr, int gen_length) : population(pop_size, gen_length) {

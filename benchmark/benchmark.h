@@ -28,7 +28,7 @@ void generate_data_island_model(int max_generations, double cross_probability, d
 
 double calc_mean(const double *errors, int size);
 
-
+int function_optimum(int func);
 
 
 #endif //PSZT_ISLAND_MODEL_BENCHMARK_H

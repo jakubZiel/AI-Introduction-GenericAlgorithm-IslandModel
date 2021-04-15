@@ -7,9 +7,16 @@
 
 
 
-int main() {
+int main(int argc, char** argv) {
 
-    int func_num = 1;
+    int func_num;
+
+    if (argc != 1)
+        func_num = atoi(argv[1]);
+    else
+        func_num = 4;
+
+
     std::cout << "func : " << func_num << std::endl << std::endl;
 
     int max_generations = 200;

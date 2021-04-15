@@ -5,7 +5,7 @@
 #ifndef PSZT_ISLAND_MODEL_CEC2017_H
 #define PSZT_ISLAND_MODEL_CEC2017_H
 #include <vector>
-#include <structures/structures.h>
+#include "structures/structures.h"
 
 void cec17_test_func(double *x, double *f, int nx, int mx,int func_num);
 

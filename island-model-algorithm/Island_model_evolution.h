@@ -6,7 +6,7 @@
 #define PSZT_ISLAND_MODEL_ISLAND_MODEL_EVOLUTION_H
 
 
-#include <std-algorithm/Evolution.h>
+#include "std-algorithm/Evolution.h"
 
 class Islands_Evolution{
 public:
@@ -23,7 +23,7 @@ public:
     Genome get_best_from_archipelago_ref();
 
 
-    void record_best(double *errors, int curr_generation, int max_generations);
+    void record_best(double *errors, int curr_generation, int max_generations, int func_num);
 };
 
 

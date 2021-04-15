@@ -2,13 +2,15 @@
 // Created by laura on 06.04.2021.
 //
 
-#include <structures/structures.h>
+#include "structures/structures.h"
 #include "Island_model_evolution.h"
-#include <std-algorithm/Evolution.h>
-#include <iostream>
-#include <algorithm>
+#include "std-algorithm/Evolution.h"
 #include "CEC_API/cec2017.h"
 #include "std-algorithm/evolutionary_operations.h"
+#include "benchmark/benchmark.h"
+
+#include <iostream>
+#include <algorithm>
 
 //run Island model, but with intermediate recordings of best genomes
 void Islands_Evolution::run_cec(int elitism_count, int all_generations, int num_of_migrations, int func_num, double *errors) {
@@ -58,7 +60,7 @@ void Islands_Evolution::run_cec(int elitism_count, int all_generations, int num_
         if (generation_counter % generation_cycle == 0 && generation_counter !=0)
             migration_round();
 
-        record_best(errors, generation_counter, all_generations);
+        record_best(errors, generation_counter, all_generations, func_num);
 
         generation_counter++;
     }
@@ -122,49 +124,49 @@ void Islands_Evolution::islands_evolution_run(int elitism_count, int all_generat
 
 
 
-void Islands_Evolution::record_best(double *errors, int curr_generation, int max_generations){
+void Islands_Evolution::record_best(double *errors, int curr_generation, int max_generations, int func_num){
 
     if (max_generations * 0.01 == curr_generation )
-        errors[0] = get_best_from_archipelago();
+        errors[0] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.02 == curr_generation )
-        errors[1] = get_best_from_archipelago();
+        errors[1] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.03 == curr_generation )
-        errors[2] = get_best_from_archipelago();
+        errors[2] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.05 == curr_generation )
-        errors[3] = get_best_from_archipelago();
+        errors[3] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.1 == curr_generation )
-        errors[4] = get_best_from_archipelago();
+        errors[4] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.2 == curr_generation )
-        errors[5] = get_best_from_archipelago();
+        errors[5] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.3 == curr_generation )
-        errors[6] = get_best_from_archipelago();
+        errors[6] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.4 == curr_generation )
-        errors[7] = get_best_from_archipelago();
+        errors[7] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.5 == curr_generation )
-        errors[8] = get_best_from_archipelago();
+        errors[8] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.6 == curr_generation )
-        errors[9] = get_best_from_archipelago();
+        errors[9] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.7 == curr_generation )
-        errors[10] = get_best_from_archipelago();
+        errors[10] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.8 == curr_generation )
-        errors[11] = get_best_from_archipelago();
+        errors[11] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations * 0.9 == curr_generation )
-        errors[12] = get_best_from_archipelago();
+        errors[12] = get_best_from_archipelago() - function_optimum(func_num);
 
     if (max_generations - 1 == curr_generation )
-        errors[13] = get_best_from_archipelago();
+        errors[13] = get_best_from_archipelago() - function_optimum(func_num);
 
 }
 
