@@ -149,7 +149,6 @@ std::vector<Genome> succession(const std::vector<Genome>& current_gen, std::vect
 
     int population_size = current_gen.size();
 
-    std::sort(new_gen.begin(), new_gen.end());
 
     for (int i = 0; i < population_size - elitism_count; i++){
         succession_result.push_back(new_gen[i]);

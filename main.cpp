@@ -14,16 +14,16 @@ int main(int argc, char** argv) {
     if (argc != 1)
         func_num = atoi(argv[1]);
     else
-        func_num = 1;
+        func_num = 4;
 
 
     std::cout << "func : " << func_num << std::endl << std::endl;
 
-    int max_generations = 20;
+    int max_generations = 1000;
     double mutation_strength = 1.2;
     double cross_probability = 0.5;
     int genome_length = 10;
-    int pop_size = 200;
+    int pop_size = 100;
     int runs = 25;
     int elitism = 2;
 

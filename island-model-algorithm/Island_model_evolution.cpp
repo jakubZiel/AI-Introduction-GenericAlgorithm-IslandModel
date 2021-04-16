@@ -122,8 +122,6 @@ void Islands_Evolution::islands_evolution_run(int elitism_count, int all_generat
 
 }
 
-
-
 void Islands_Evolution::record_best(double *errors, int curr_generation, int max_generations, int func_num){
 
     if (int (max_generations * 0.01) == curr_generation )
