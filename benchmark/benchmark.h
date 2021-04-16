@@ -5,13 +5,7 @@
 #ifndef PSZT_ISLAND_MODEL_BENCHMARK_H
 #define PSZT_ISLAND_MODEL_BENCHMARK_H
 
-#include <algorithm>
-#include <iomanip>
-#include <iostream>
 #include "std-algorithm/Evolution.h"
-#include "island-model-algorithm/Island_model_evolution.h"
-
-
 
 void record_errors(double *errors, Evolution &std_model, int func_num, int elitism, int max_generations);
 

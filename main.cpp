@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
 
     std::cout << "func : " << func_num << std::endl << std::endl;
 
-    int max_generations = 100;
+    int max_generations = 20;
     double mutation_strength = 1.2;
     double cross_probability = 0.5;
     int genome_length = 10;

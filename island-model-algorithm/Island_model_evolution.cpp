@@ -126,46 +126,46 @@ void Islands_Evolution::islands_evolution_run(int elitism_count, int all_generat
 
 void Islands_Evolution::record_best(double *errors, int curr_generation, int max_generations, int func_num){
 
-    if (max_generations * 0.01 == curr_generation )
+    if (int (max_generations * 0.01) == curr_generation )
         errors[0] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.02 == curr_generation )
+    if (int (max_generations * 0.02 ) == curr_generation )
         errors[1] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.03 == curr_generation )
+    if (int (max_generations * 0.03 ) == curr_generation )
         errors[2] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.05 == curr_generation )
+    if (int (max_generations * 0.05 ) == curr_generation )
         errors[3] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.1 == curr_generation )
+    if (int (max_generations * 0.1 ) == curr_generation )
         errors[4] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.2 == curr_generation )
+    if (int (max_generations * 0.2 ) == curr_generation )
         errors[5] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.3 == curr_generation )
+    if (int (max_generations * 0.3 ) == curr_generation )
         errors[6] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.4 == curr_generation )
+    if (int (max_generations * 0.4 ) == curr_generation )
         errors[7] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.5 == curr_generation )
+    if (int (max_generations * 0.5 ) == curr_generation )
         errors[8] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.6 == curr_generation )
+    if (int (max_generations * 0.6 ) == curr_generation )
         errors[9] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.7 == curr_generation )
+    if (int (max_generations * 0.7 ) == curr_generation )
         errors[10] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.8 == curr_generation )
+    if (int (max_generations * 0.8 ) == curr_generation )
         errors[11] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations * 0.9 == curr_generation )
+    if (int (max_generations * 0.9 ) == curr_generation )
         errors[12] = get_best_from_archipelago() - function_optimum(func_num);
 
-    if (max_generations - 1 == curr_generation )
+    if (int (max_generations - 1 ) == curr_generation )
         errors[13] = get_best_from_archipelago() - function_optimum(func_num);
 
 }
