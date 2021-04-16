@@ -14,12 +14,12 @@ int main(int argc, char** argv) {
     if (argc != 1)
         func_num = atoi(argv[1]);
     else
-        func_num = 4;
+        func_num = 1;
 
 
     std::cout << "func : " << func_num << std::endl << std::endl;
 
-    int max_generations = 200;
+    int max_generations = 100;
     double mutation_strength = 1.2;
     double cross_probability = 0.5;
     int genome_length = 10;
@@ -41,11 +41,11 @@ int main(int argc, char** argv) {
 
     std::cout << "num of islands : 20, 10, 5 ,4 ,2 (max pop = " << pop_size << ")" << std::endl << std::endl;
 
-    generate_data_island_model(max_generations, cross_probability, mutation_strength, genome_length, pop_size, 20, 10, 10, func_num, 25, 2 );
-    generate_data_island_model(max_generations, cross_probability, mutation_strength, genome_length, pop_size, 10, 20, 10, func_num, 25, 2 );
-    generate_data_island_model(max_generations, cross_probability, mutation_strength, genome_length, pop_size, 5, 40, 10, func_num, 25, 2 );
-    generate_data_island_model(max_generations, cross_probability, mutation_strength, genome_length, pop_size, 4, 50, 10, func_num, 25, 2 );
-    generate_data_island_model(max_generations, cross_probability, mutation_strength, genome_length, pop_size, 2, 100, 10, func_num, 25, 2 );
+    generate_data_island_model(max_generations, cross_probability, mutation_strength, genome_length, pop_size, 20, 10, func_num, 25, 2 );
+    generate_data_island_model(max_generations, cross_probability, mutation_strength, genome_length, pop_size, 10, 10, func_num, 25, 2 );
+    generate_data_island_model(max_generations, cross_probability, mutation_strength, genome_length, pop_size, 5, 10, func_num, 25, 2 );
+    generate_data_island_model(max_generations, cross_probability, mutation_strength, genome_length, pop_size, 4, 10, func_num, 25, 2 );
+    generate_data_island_model(max_generations, cross_probability, mutation_strength, genome_length, pop_size, 2, 10, func_num, 25, 2 );
 
     return 0;
 }

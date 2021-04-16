@@ -40,11 +40,13 @@ void generate_data_std_model(int max_generations, double cross_probability, doub
 
 
 void generate_data_island_model(int max_generations, double cross_probability, double mutation_power, int genome_length,
-                                int std_population_size, int num_of_islands, int subpopulation_size, int num_of_migrations, int func_num, int runs, int elitism){
+                                int std_population_size, int num_of_islands, int num_of_migrations, int func_num, int runs, int elitism){
     const int number_of_recordings = runs * 14;
 
     int run_counter = 0;
     auto* errors = new double[number_of_recordings];
+
+    int subpopulation_size = std_population_size / num_of_islands;
 
     while (run_counter < runs){
         Islands_Evolution island_model(num_of_islands, subpopulation_size, cross_probability, mutation_power, genome_length);

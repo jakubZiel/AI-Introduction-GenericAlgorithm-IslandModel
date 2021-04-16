@@ -23,7 +23,7 @@ void generate_data_std_model(int max_generations, double cross_probability, doub
                    int std_population_size, int func_num, int runs, int elitism);
 
 void generate_data_island_model(int max_generations, double cross_probability, double mutation_power, int genome_length,
-                                int std_population_size, int num_of_islands, int subpopulation_size, int num_of_migrations, int func_num, int runs, int elitism);
+                                int std_population_size, int num_of_islands, int num_of_migrations, int func_num, int runs, int elitism);
 
 
 double calc_mean(const double *errors, int size);
